@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var num1 = Number(prompt("Podaj pierwszą liczbę: "));
+        var num2 = Number(prompt("Podaj drugą liczbę: "));
+        var znak = prompt("podaj znak działania +, -, *, /");
+        var dzialanie;
+
+        switch (znak) {
+            case "+":
+                dzialanie = num1 + num2;
+                break;
+            case "-":
+                dzialanie = num1 - num2;
+                break;
+            case "*":
+                dzialanie = num1 * num2;
+                break;
+            case "/":
+                if (num2 !== 0) {
+                    dzialanie = num1 / num2;
+                } else {
+                    dzialanie = "Błąd: Dzielenie przez zero!";
+                }
+                break;
+            default:
+                dzialanie = "Niepoprawny format znaku";
+        }
+        document.getElementById("output").innerHTML = dzialanie;
+    </script>
+</body>
+
+</html>

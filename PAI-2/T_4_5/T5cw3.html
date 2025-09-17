@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+
+        //a
+        var grade = Number(prompt("podaj ocenę: "));
+
+        if (grade == 1) {
+            document.getElementById("output").innerHTML = "niedostateczny";
+        }
+        else if (grade == 2) {
+            document.getElementById("output").innerHTML = "dopuszczający";
+        }
+        else if (grade == 3) {
+            document.getElementById("output").innerHTML = "dostateczny";
+        }
+        else if (grade == 4) {
+            document.getElementById("output").innerHTML = "dobry";
+        }
+        else if (grade == 5) {
+            document.getElementById("output").innerHTML = "bardzo dobry";
+        }
+        else if (grade == 6) {
+            document.getElementById("output").innerHTML = "celujący";
+        }
+        else {
+            document.getElementById("output").innerHTML = "Niepoprawny format oceny";
+        }
+
+
+        //b
+        var grade1 = Number(prompt("Podaj ocenę: "));
+        var wynik;
+
+        switch (grade1) {
+            case 1:
+                wynik = "niedostateczny";
+                break;
+            case 2:
+                wynik = "dopuszczający";
+                break;
+            case 3:
+                wynik = "dostateczny";
+                break;
+            case 4:
+                wynik = "dobry";
+                break;
+            case 5:
+                wynik = "bardzo dobry";
+                break;
+            case 6:
+                wynik = "celujący";
+                break;
+            default:
+                wynik = "Niepoprawny format oceny";
+        }
+
+        document.getElementById("output").innerHTML = wynik;
+
+
+    </script>
+</body>
+
+</html>

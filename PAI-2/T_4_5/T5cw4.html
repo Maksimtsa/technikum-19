@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        var num1 = Number(prompt("Podaj pierwszą liczbę: "));
+        var num2 = Number(prompt("Podaj drugą liczbę: "));
+        var num3 = Number(prompt("Podaj trzecią liczbę: "));
+
+        if (num1 <= num2 && num1 <= num3) {
+            if (num2 <= num3) {
+                result = num1 + ", " + num2 + ", " + num3;
+            } else {
+                result = num1 + ", " + num3 + ", " + num2;
+            }
+        }
+        else if (num2 <= num1 && num2 <= num3) {
+            if (num1 <= num3) {
+                result = num2 + ", " + num1 + ", " + num3;
+            } else {
+                result = num2 + ", " + num3 + ", " + num1;
+            }
+        }
+        else {
+            if (num1 <= num2) {
+                result = num3 + ", " + num1 + ", " + num2;
+            } else {
+                result = num3 + ", " + num2 + ", " + num1;
+            }
+        }
+
+        document.getElementById("output").innerHTML = "Liczby w kolejności rosnącej: " + result;
+
+    </script>
+</body>
+
+</html>

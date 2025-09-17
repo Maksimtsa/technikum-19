@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        function calc(a, b, h) {
+            return ((a + b) * h) / 2;
+        }
+
+        function main() {
+            const output = document.getElementById("output");
+
+
+            var c1 = obliczPoleTrapezu(4, 6, 5);
+            var c2 = obliczPoleTrapezu(7, 9, 8);
+            var c3 = obliczPoleTrapezu(10, 12, 6);
+
+
+            output.innerHTML = `
+                Pole trapezu 1 (a=4, b=6, h=5): ${c1} jednostek kwadratowych.<br>
+                Pole trapezu 2 (a=7, b=9, h=8): ${c2} jednostek kwadratowych.<br>
+                Pole trapezu 3 (a=10, b=12, h=6): ${c3} jednostek kwadratowych.
+            `;
+        }
+        main();
+    </script>
+</body>
+
+</html>

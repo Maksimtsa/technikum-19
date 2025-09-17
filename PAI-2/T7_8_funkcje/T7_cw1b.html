@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        let iP = () => {
+            var a = parseFloat(prompt("podaj liczbę: "));
+            var b = parseFloat(prompt("podaj liczbę: "));
+            return [a, b];
+        }
+
+        let sum = (a, b) => a + b;
+
+
+        let sub = (a, b) => a - b;
+
+
+        let mult = (a, b) => a * b;
+
+        let division = (a, b) => {
+            if (b === 0) {
+                return "nie można dzielić przez 0";
+            }
+            else {
+                return a / b;
+            }
+        }
+
+        let calc = () => {
+            const [a, b] = iP();
+            document.getElementById("output").innerHTML = `wynik dodowania: ${sum(a, b)} <br>
+            wynik odejmowania: ${sub(a, b)}<br>
+            wynik mnożenia: ${mult(a, b)}<br>
+            wynik dzielenia: ${division(a, b)}<br>`
+        }
+        calc();
+    </script>
+</body>
+
+</html>

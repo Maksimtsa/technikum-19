@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T7cw4a</title>
+    <script>
+        function comGrade(grade) {
+            if (grade === 1 || grade === 2) {
+                return "Sporo pracy przed Tobą.";
+            } else if (grade === 3) {
+                return "Jeszcze trochę, a będzie ok.";
+            } else {
+                return "Okej.";
+            }
+        }
+
+        function main() {
+            for (grade = 1; grade < 6; grade++) {
+                const comment = comGrade(grade);
+                console.log(`Ocena: ${grade} - ${comment}`);
+            }
+        }
+
+        main();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

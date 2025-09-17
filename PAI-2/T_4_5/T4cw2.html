@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p id="output"></p>
+<p id="output1"></p>
+
+<body>
+    <script>
+        var num1 = Number(prompt("podaj 1 liczbę: "));
+        var num2 = Number(prompt("podaj 2 liczbę: "));
+
+
+        if (num2 != 0) {
+            document.getElementById("output").innerHTML = num1 / num2
+        }
+        else {
+            document.getElementById("output1").innerHTML = "Nie można dzielić przez zero";
+        }
+    </script>
+</body>
+
+</html>

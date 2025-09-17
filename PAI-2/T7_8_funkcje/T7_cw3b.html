@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        const num = () => {
+            let a = parseFloat(prompt("Podaj pierwszą liczbę:"));
+            let b = parseFloat(prompt("Podaj drugą liczbę:"));
+            return [a, b];
+        };
+
+
+        const getMinMaxAvg = (a, b) => {
+            let min = Math.min(a, b);
+            let max = Math.max(a, b);
+            let avg = (a + b) / 2;
+            return { min, max, avg };
+        };
+
+
+        const res = () => {
+            const [a, b] = num();
+            const { min, max, avg } = getMinMaxAvg(a, b);
+            document.getElementById("output").innerHTML = `
+        Minimum: ${min} <br>
+        Maksimum: ${max} <br>
+        Średnia: ${avg} <br>`;
+        };
+        res();
+    </script>
+</body>
+
+</html>

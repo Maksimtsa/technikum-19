@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <p id="output1"></p>
+
+    <script>
+        let name = prompt("podaj imie: ");
+        let surname = prompt("podaj nazwisko: ");
+        let adress = prompt("podaj swój adres: ");
+        document.getElementById("output").innerHTML = (`IMIE: ${name} NAWISKO: ${surname} ADRES: ${adress}`)
+        let fullInfo = "Imie: " + name + " Nazwisko: " + surname +  " Adres: " + adress;
+        document.getElementById("output1").innerHTML = fullInfo;
+
+    </script>
+</body>
+
+</html>

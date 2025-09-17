@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+
+    <script>
+        //var l = parseFloat(prompt("Podaj długość:"))
+        //var w = parseFloat(prompt("Podaj szerokość:"))
+        // var pole = l * w;
+        // var obwod = 2 * l + 2 * w;
+        // document.write(`bok a = <b> ${l}</b>`)
+        // document.write(`</br>bok b = <b>${w}</b>`)
+        // document.write(`</br>Pole = <b>${pole} cm^2</b>`)
+        // document.write(`</br>Obwód = <b>${obwod} cm</b>`)
+
+        let l = parseFloat(prompt("Podaj długość:"))
+        let w = parseFloat(prompt("Podaj szerokość:"))
+        let pole = l * w;
+        let obwod = 2 * l + 2 * w;
+        document.getElementById("output").innerHTML = (`bok a = <b> ${l}</b>`);
+        document.getElementById("output1").innerHTML = (`bok b = <b>${w}</b>`);
+        document.getElementById("output2").innerHTML = (`Pole = <b>${pole} cm^2</b>`);
+        document.getElementById("output3").innerHTML = (`Obwód = <b>${obwod} cm</b>`);
+
+    </script>
+</body>
+
+</html>

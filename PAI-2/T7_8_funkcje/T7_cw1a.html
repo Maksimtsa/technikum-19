@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        function iP() {
+            const a = parseFloat(prompt("podaj liczbę: "));
+            const b = parseFloat(prompt("podaj liczbę: "));
+            return [a, b];
+        }
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        function sub(a, b) {
+            return a - b;
+        }
+
+        function mult(a, b) {
+            return a * b;
+        }
+
+        function division(a, b) {
+            if (b === 0) {
+                return "Nie można dzielić przez 0";
+            } else {
+                return a / b;
+            }
+        }
+
+        function calc() {
+            const [a, b] = iP();
+            document.getElementById("output").innerHTML = `wynik dodowania: ${sum(a, b)} <br>
+            wynik odejmowania: ${sub(a, b)}<br>
+            wynik mnożenia: ${mult(a, b)}<br>
+            wynik dzielenia: ${division(a, b)}<br>`
+        }
+        calc();
+    </script>
+</body>
+
+</html>

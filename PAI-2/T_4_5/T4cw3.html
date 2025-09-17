@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <script>
+        var num1 = Number(prompt("podaj 1 liczbę: "));
+        var num2 = Number(prompt("podaj 2 liczbę: "));
+
+        if (num1 > num2) {
+            document.getElementById("output").innerHTML = `mniejsza z liczb wynosi ${num2}`;
+        }
+        else if (num2 > num1) {
+            document.getElementById("output1").innerHTML = `mniejsza z liczb wynosi ${num1}`;
+        }
+        else {
+            document.getElementById("output2").innerHTML = "liczby są równe";
+        }
+    </script>
+</body>
+
+</html>

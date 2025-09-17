@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <p id="output1"></p>
+    <script>
+        let password = prompt("podaj hasło: ");
+        if (password == "DoINF03czas") {
+            // alert("hasło jest prawiłowe");
+            document.getElementById("output").innerHTML = "hasło jest prawiłowe";
+        }
+        else {
+            // alert("Błędne hasło");
+            document.getElementById("output1").innerHTML = "Błędne hasło";
+        }
+
+    </script>
+</body>
+
+</html>

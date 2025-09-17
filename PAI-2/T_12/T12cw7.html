@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <button onclick="calc()">Oblicz</button>
+    <script>
+        function calc() {
+            const num = Number(prompt("Podaj liczbę dodatnią"))
+            if (num > 0) {
+                const sqrt = Math.sqrt(num);
+                const rounding = Math.floor(num);
+                const logarithm = Math.log(num);
+                document.getElementById("output").innerHTML = `
+                    Pierwiastek kwadratowy: ${sqrt}<br>
+                    Zaokrąglenie do dołu: ${rounding}<br>
+                    Logarytm naturalny: ${logarithm}`;
+            }
+            else {
+                document.getElementById('output').innerHTML = `Liczba musi być dodatnia`;
+            }
+        }
+    </script>
+</body>
+
+</html>

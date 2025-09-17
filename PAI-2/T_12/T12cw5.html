@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Obiekt - String</title>
+</head>
+
+<body>
+    <script>
+        let text = "zespół Szkół";
+
+        console.log(text.length); // 12
+        console.log(text.charAt(8)); // z
+        console.log(text.charAt(11)); // ł
+        console.log(text.charAt(text.length - 3)); // k
+        console.log(text.indexOf("Szkół")); // 7
+        console.log(text.indexOf("e")); // 1
+        console.log(text.indexOf("e", 2)); // -1
+        console.log(text.replace(/e/g, "y")); // zyspół Szkół
+        console.log(text.replace(/z/g, "")); // espół Szkół
+        console.log(text.slice(1, 4)); // esp
+        console.log(text.substr(1, 4)); // espo
+        console.log(text.substring(1, 4)); // esp
+        console.log(text.split(" ")); // ["zespół", "Szkół"]
+        console.log(text.split("ł")); // 14
+    </script>
+</body>
+
+</html>

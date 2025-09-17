@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <script>
+
+            var m = Number(prompt("Podaj liczbę wierszy: "));
+            var n = Number(prompt("Podaj liczbę kolumn: "));
+
+
+            document.write("<tr><th></th>");
+            var i = 1;
+            while (i <= n) {
+                document.write("<th>" + i + "</th>");
+                i++;
+            }
+            document.write("</tr>");
+
+            i = 1;
+            while (i <= m) {
+                document.write("<tr>");
+                document.write("<th>" + i + "</th>");
+
+                var j = 1;
+                while (j <= n) {
+                    document.write("<td>" + (i * j) + "</td>");
+                    j++;
+                }
+                i++;
+                document.write("</tr>");
+            }
+
+        </script>
+    </table>
+</body>
+
+</html>

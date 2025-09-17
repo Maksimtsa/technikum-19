@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h2>Galeria miejsc ciekawych</h2>
+    </header>
+    <main>
+        <img src="lanzarotte.jpg" id="mainImg">
+    </main>
+    <div>
+        <section id="leftBlock">
+            <h2>Przeglądaj zdjęcia</h2>
+            <div>
+                <img src="lanzarotte.jpg" alt="lanzarotte" id="imgs" onclick="btn('lanzarotte')">
+                <img src="pekin.jpg" alt="pekin" id="imgs" onclick="btn('pekin')">
+                <img src="serengeti.jpg" alt="serengeti" id="imgs" onclick="btn('serengeti')">
+                <img src="wenecja.jpg" alt="wenecja" id="imgs" onclick="btn('wenecja')">
+                <img src="tajlandia.jpg" alt="tajlandia" id="imgs" onclick="btn('tajlandia')">
+            </div>
+        </section>
+        <section id="rightBlock">
+            <h3>Obrazy w naszej galerii</h3>
+            <table>
+                <tr>
+                    <td>Europa</td>
+                    <td>Azja</td>
+                    <td>Afryka</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            <p>Polub nas <img id="icon" src="icon-off.png" onclick="iconBtn()"></p>
+            <a href="#" target="_blank">Odkryj więcej zdjęć</a>
+        </section>
+    </div>
+    <footer>
+        Autor
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

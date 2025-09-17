@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $("document").ready(function () {
+            $("img").hover(
+                function () {
+                    $(this).css("display", "none")
+                        .slideDown(2000);
+                },
+                function () {
+                    $(this).css("display", "block")
+                });
+        })
+
+
+    </script>
+</head>
+
+<body>
+
+    <img src="dog.jpg">
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id='out'></p>
+    <script>
+        const mealsLike = ['Pasta ', 'Pizza ', 'Burger '];
+        const mealsNotLike = ['Ryba ', 'Grzybki ', 'Coś '];
+
+        let menu = `moje menu może składać się z: ${[...mealsLike, ...mealsNotLike].join(", ")}`;
+        document.getElementById('out').innerHTML = menu;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+body {
+	background: #197c86;
+}
+
+section {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	border-bottom: 2px solid #fff;
+	height: 35vh;
+}
+
+.box {
+	height: 100px;
+	width: 100px;
+	margin: 20px;
+	background: #fff;
+}
+
+.heart {
+	background: #f00;
+	margin: 50px;
+	height: 80px;
+	width: 80px;
+	position: relative;
+}
+
+.trans {
+	position: relative;
+	transition: background 1s linear;
+}
+
+.trans:hover {
+	background: maroon;
+}
+
+.t1 {
+	transform: translateY(50px);
+	transition: background 1s linear, transform 1s;
+}
+
+.t1:hover {
+	transform: translateY(0px);
+	background: magenta;
+	transition: background 1s linear, transform 1s;
+}
+
+.t2 {
+	transform: translateX(50px);
+	transition: background 1s linear, transform 1s;
+}
+
+.t2:hover {
+	transform: translateY(0px);
+	background: blue;
+	transition: background 1s linear, transform 1s;
+}
+
+.t3 {
+	transform: translate(130px, 60px);
+	transition: transform 2s ease-out;
+}
+
+.t3:hover {
+	transform: translateY(0px);
+	background: magenta;
+	transition: background 1s linear, transform 1s;
+}
+
+.r1 {
+	background: red;
+	transform: rotate(360deg);
+	transition: transform 56s ease-out 100ms;
+}
+
+.r1:hover {
+	background: greenyellow;
+	transform: rotate(-45deg);
+	transition: transfrom 0.5s;
+}
+
+.r2 {
+	background: red;
+	transform: rotate(-45deg);
+	transition: transform 2s ease-out 100ms;
+}
+
+.r2:hover {
+	background: darkblue;
+	transform: rotateX(180deg);
+	transition: transform 1s;
+}
+
+.r3:hover {
+	background: rgb(255, 230, 0);
+	transform: rotateX(360deg);
+	transition: transform 2s;
+}
+
+.scale:hover {
+	background: goldenrod;
+	transform: scale(3);
+	transition: background 1s ease-in, transform 3s;
+}
+
+.skew1 {
+	transition: background 1s ease-in, transform 0.5s ease-in;
+}
+
+.skew1:hover {
+	background: aqua;
+	transform: skewX(60deg);
+	transition: background 1s ease-in, transform 0.5s ease-in;
+}
+
+.complex1:hover {
+	background: rgb(146, 13, 124);
+	transform: rotate(45deg) translate(124px, 25px);
+	transition: background 1s ease-in, transform 1s;
+}
+
+.complex2:hover {
+	background: rgb(146, 13, 124);
+	transform: scale(3) skewX(-40deg);
+	transition: background 1s ease-in, transform 1s;
+}
+
+.matrix:hover {
+	background: rgb(146, 13, 124);
+	transform: matrix(1, 2, 1, 3, 2, 3);
+	transition: all 4s;
+}
+
+.anim1 {
+	background: #f00;
+	transform: rotate(30deg);
+	opacity: 0.7;
+	animation: roll 3s infinite;
+}
+
+@keyframes roll {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.anim2 {
+	background: blue;
+	transform: translateX(0px);
+	opacity: 0.7;
+	animation: moveRight 4s 5;
+}
+
+@keyframes moveRight {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(20px);
+	}
+}
+
+.anim3 {
+	background: green;
+	opacity: 0.7;
+	animation: moveDown 2s 5;
+	animation-direction: -100px;
+}
+
+@keyframes moveDown {
+	from {
+		transform: translateY(0);
+	}
+
+	to {
+		transform: translateY(-100px);
+	}
+}
+
+.heart {
+	transform: rotate(45deg);
+	border-radius: 10%;
+	animation: puls 1s infinite
+}
+
+@keyframes puls {
+	0% {
+		transform: scale(1) rotate(45deg);
+	}
+
+	50% {
+		transform: scale(1.3) rotate(45deg);
+	}
+
+	100% {
+		transform: scale(1.1) rotate(45deg);
+	}
+}
+
+.heart::before {
+	content: "";
+	height: 80px;
+	width: 80px;
+	background: #f00;
+	top: 0px;
+	position: absolute;
+	left: -50%;
+	border-radius: 50%;
+}
+
+.heart::after {
+	content: "";
+	height: 80px;
+	width: 80px;
+	background: #f00;
+	top: -50%;
+	position: absolute;
+	left: 0px;
+	border-radius: 50%;
+}

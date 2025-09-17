@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $("document").ready(function () {
+            $("p").hover(
+                function () {
+                    $(this).animate({
+                        fontSize: "25px"
+                    });
+                },
+                function () {
+                    $(this).animate({
+                        fontSize: "16px"
+                    });
+                }
+            );
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <p>METODA ANIMATE</p>
+
+</body>
+
+</html>

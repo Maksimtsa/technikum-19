@@ -1,0 +1,61 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Georgia;
+}
+
+#leftBlock {
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 30%;
+}
+
+#rightBlock {
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 70%;
+    overflow: auto;
+}
+
+#mainBlock {
+    display: flex;
+}
+
+#asd {
+    display: flex;
+}
+
+footer {
+    background-color: dimgray;
+    color: white;
+}
+
+.btn1 {
+    background-color: indigo;
+}
+
+.btn1:hover {
+    background-color: rgb(52, 0, 88);
+}
+
+.btn2 {
+    background-color: steelblue;
+}
+
+.btn2:hover {
+    background-color: rgb(54, 101, 139);
+}
+
+.btn3 {
+    background-color: Olive;
+}
+
+.btn3:hover {
+    background-color: rgb(95, 95, 0);
+}

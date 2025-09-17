@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .gallery {
+            text-align: center;
+        }
+
+        .large-image {
+            width: 650px;
+            height: 450px;
+            margin-bottom: 20px;
+        }
+
+        .thumbs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .thumb {
+            width: 100px;
+            height: 75px;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .thumb img:hover {
+            border-bottom: #1d82c5;
+        }
+
+        .thumb.selected {
+            border-color: #1d82c5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="gallery">
+        <img id="mainImage" class="large-image" src="3_1.jpg">
+        <div class="thumbs">
+            <div class="thumb"><img src="3_1.jpg"></div>
+            <div class="thumb"><img src="3_2.jpg"></div>
+            <div class="thumb"><img src="3_3.jpg"></div>
+            <div class="thumb"><img src="3_4.jpg"></div>
+        </div>
+    </div>
+
+    <script>
+        const images = ["3_1.jpg", "3_2.jpg", "3_3.jpg", "3_4.jpg"];
+        const mainImage = document.getElementById('mainImage');
+        const thumbs = document.querySelectorAll('.thumb');
+
+        thumbs.forEach((thumb, index) => {
+            thumb.addEventListener('mouseover', () => {
+                mainImage.src = images[index];
+                thumbs.forEach(t => t.classList.remove('selected'));
+                thumb.classList.add('selected');
+            });
+            thumb.addEventListener('mouseout', () => {
+                if (!thumb.classList.contains('selected')) {
+                    mainImage.src = images[0];
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

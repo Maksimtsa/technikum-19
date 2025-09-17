@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="out"></p>
+    <p id="out1"></p>
+    <p id="out2"></p>
+    <script>
+        function Triangle(a, b) {
+            this.a = a;
+            this.b = b;
+
+            this.hypotenuse = function () {
+                return Math.sqrt(this.a * this.a + this.b * this.b)
+            }
+            this.area = function () {
+                return (this.a * this.b) / 2;
+            }
+            this.circuit = function () {
+                const c = this.hypotenuse();
+                return this.a + this.b + c;
+            }
+        }
+        let a = Number(prompt("Podaj pierwszą liczbę"))
+        let b = Number(prompt("Podaj drugą liczbę"))
+
+        const triangle = new Triangle(a, b);
+
+        document.getElementById('out').innerHTML = `Długośc przeciwprostokątnej: ${triangle.hypotenuse().toFixed(2)}`;
+        document.getElementById('out1').innerHTML = `Pole: ${triangle.area()}`;
+        document.getElementById('out2').innerHTML = `Obwód: ${triangle.circuit()}`;
+    </script>
+</body>
+
+</html>

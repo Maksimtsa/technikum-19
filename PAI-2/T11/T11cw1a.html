@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="out"></p>
+    <script>
+        const data = {
+            name: '',
+            surname: '',
+            height: '',
+            weight: '',
+
+            greating() {
+                return `Witaj ${this.name} ${this.surname} <br>`;
+            },
+            inf() {
+                return `Wzrost: ${this.height} <br> waga: ${this.weight}`;
+            }
+        }
+
+        data.name = prompt("podaj imie: ");
+        data.surname = prompt("podaj nazwisko: ");
+        data.height = prompt("podaj wzrost: ");
+        data.weight = prompt("podaj wagę: ");
+
+        document.getElementById('out').innerHTML = data.greating() + data.inf();
+    </script>
+</body>
+
+</html>

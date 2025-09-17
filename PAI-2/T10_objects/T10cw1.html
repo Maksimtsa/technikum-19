@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        const inf = { name: "Maksim", surname: "Tsaryk", date: "22.12.2000" };
+
+        document.getElementById("output").innerHTML = `
+        imie: ${inf.name} <br>
+        nzwisko: ${inf.surname} <br>
+        data urodzenia ${inf.date}`;
+        console.log(inf);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        fieldset {
+            background-color: rgb(207, 176, 91);
+            width: 600px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            border: 3px solid;
+            border-color: rgb(82, 82, 82);
+            border-radius: 2%;
+        }
+
+        #koszt {
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        label {
+            height: 5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 17px;
+        }
+
+        #btn {
+            width: 100px;
+            height: 35px;
+            border-radius: 8%;
+            border: 1, 5px solid;
+            background-color: rgb(211, 112, 73);
+        }
+
+        #btn:hover {
+            background-color: rgb(138, 74, 49);
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <form method="get">
+            <legend id="koszt">Oblicz koszt dostawy</legend>
+            <label><input id="butt" type="radio">Jestem z Zielonej Góry</label>
+            <label id="or">albo</label>
+            <label>Podaj liczbę kilometrów od Zielonej Góry: <input type="number" name="amount" value=""
+                    style="height: 14px"> </label>
+            <label><input type="button" value="oblicz" id="btn"></label>
+            <p id="out"></p>
+        </form>
+    </fieldset>
+    <script>
+        const rad = document.querySelector("input[type='radio']");
+        const out = document.querySelector("#out");
+        const btn = document.querySelector("#btn");
+
+        btn.addEventListener("click", function () {
+            if (rad.checked) {
+                out.textContent = "Dowieziemy Twoją pizzę za darmo";
+            }
+            else {
+                const amount = parseFloat(document.querySelector("input[name='amount']").value);
+                out.textContent = `Dowóz będzie Cię kosztował: ${amount * 2}zł`;
+            }
+        })
+
+    </script>
+</body>
+
+</html>

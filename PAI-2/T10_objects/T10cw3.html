@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="output"></h1>
+    <script>
+        const inf = new Object({
+            name: "Maksim",
+            surname: "Tsaryk",
+            date: "22.12.2000",
+            height: 150,
+            eyes: "brown",
+            date: "22.12.1999"
+        })
+
+        inf.street = "czecha";
+        inf.houseNumber = "52";
+        inf.zip = "52-322";
+        inf.city = "Poznań"
+
+        document.getElementById("output").innerHTML = `
+        imie: ${inf.name} <br>
+        nzwisko: ${inf.surname} <br>
+        data urodzenia ${inf.date}<br>
+        wzrost ${inf.height}<br>
+        kolor oczu: ${inf.eyes}<br>
+        ulica: ${inf.street}<br>
+        numer domu: ${inf.houseNumber}<br>
+        kod pocztowy: ${inf.zip}<br>
+        miejscowość: ${inf.city}`;
+        console.log(inf);
+    </script>
+</body>
+
+</html>

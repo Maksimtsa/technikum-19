@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header {
+            font-size: 25px;
+        }
+
+        .link {
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+            text-decoration: none;
+        }
+
+        .image {
+            width: 200px;
+            height: 150px;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: rgb(136, 60, 136);
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="ipElements()">Wstaw elementy</button>
+
+    <div id="content"></div>
+    <script>
+        function ipElements() {
+            const header = document.createElement('h1');
+            header.textContent = "Nagłówek";
+            header.className = 'header';
+
+            const link1 = document.createElement('a');
+            link1.href = "https://github.com/Maksimtsa";
+            link1.textContent = "Mój github";
+            link1.className = 'link';
+
+            const link2 = document.createElement('a');
+            link2.href = "https://openai.com/";
+            link2.textContent = "AI";
+            link2.className = 'link';
+
+            const image = document.createElement('img');
+            image.src = "image.jpg";
+            image.className = 'image';
+
+            const all = document.getElementById('content');
+            all.appendChild(header);
+            all.appendChild(link1);
+            all.appendChild(document.createElement('br'));
+            all.appendChild(link2);
+            all.appendChild(document.createElement('br'));
+            all.appendChild(image);
+        }
+    </script>
+</body>
+
+</html>

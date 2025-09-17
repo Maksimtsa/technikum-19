@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="output">
+
+        <script>
+            let data = ['Maksim', 'Tsaryk', '16', '152', '05-12-2007', '2f']
+            let data1 = ['Imie', 'Nazwisko', 'wiek', 'wzrost', 'data urodzenia', 'klasa'];
+            let dw = "<tr>";
+
+
+            for (let i = 0; i < data1.length; i++) {
+                dw += "<th>" + data1[i] + "</th>";
+            }
+            dw += "</tr>";
+
+            dw += "<tr>";
+            for (let i = 0; i < data.length; i++) {
+                dw += "<th>" + data[i] + "</th>";
+            }
+            dw += "</tr>";
+
+            document.getElementById("output").innerHTML = dw;
+        </script>
+    </table>
+</body>
+
+</html>

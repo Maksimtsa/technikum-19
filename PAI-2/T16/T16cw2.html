@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="T16cw2.css">
+</head>
+
+<body>
+    <header>
+        <h1>Lista zadań: </h1>
+        <input id="input" placeholder="Wpisz treść">
+        <button onclick="addContent()" id="add">Dodaj</button>
+    </header>
+    <main>
+        <div id="content">
+            <ul id="tasklist"></ul>
+        </div>
+    </main>
+    <script>
+        function addContent() {
+            const tasklist = document.getElementById('tasklist');
+            const taskContainer = document.createElement('div');
+            const task = document.createElement('ul');
+            const rmtask = document.createElement('button');
+            rmtask.textContent = "Usuń";
+
+            rmtask.onclick = function () {
+                tasklist.removeChild(taskContainer);
+            };
+
+            task.textContent = document.getElementById('input').value || 'Nowe zadanie';
+
+            taskContainer.classList.add('task-item');
+
+            taskContainer.appendChild(task);
+            taskContainer.appendChild(rmtask);
+            tasklist.appendChild(taskContainer);
+
+            document.getElementById('input').value = '';
+        }
+    </script>
+</body>
+
+</html>

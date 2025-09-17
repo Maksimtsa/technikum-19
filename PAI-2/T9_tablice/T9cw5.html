@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        let numbers = [];
+        let numCount = parseInt(prompt("Ile liczb chcesz podać?"));
+        var sum = 0;
+
+        for (let i = 0; i < numCount; i++) {
+            numbers[i] = parseFloat(prompt(`Podaj liczbę ${i + 1}:`));
+            sum += numbers[i];
+        }
+
+
+        document.getElementById("output").innerHTML = sum;
+    </script>
+</body>
+
+</html>

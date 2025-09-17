@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trójkąty</title>
+</head>
+
+<body>
+    <p id="out"></p>
+    <p id="out1"></p>
+    <p id="out2"></p>
+    <p id="out3"></p>
+    <script>
+        class Triangle {
+            constructor(a, b) {
+                this.a = a;
+                this.b = b;
+            }
+
+
+            hypotenuse() {
+                return Math.sqrt(this.a * this.a + this.b * this.b);
+            }
+            area() {
+                return (this.a * this.b) / 2;
+            }
+            circuit() {
+                const c = this.hypotenuse();
+                return this.a + this.b + c;
+            }
+            getInfo() {
+                const hyp = this.hypotenuse();
+                const area = this.area();
+                const circuit = this.circuit();
+                return `Długość przeciwprostokątnej: ${hyp}, Pole: ${area}, Obwód: ${circuit}`;
+            };
+        }
+
+        const triangle1 = new Triangle(3, 4);
+        const triangle2 = new Triangle(5, 12);
+        const triangle3 = new Triangle(8, 15);
+
+        document.getElementById('out').innerHTML = triangle1.getInfo();
+        document.getElementById('out1').innerHTML = triangle2.getInfo();
+        document.getElementById('out2').innerHTML = triangle3.getInfo();
+    </script>
+</body>
+
+</html>

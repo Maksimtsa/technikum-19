@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zmiana Położenia i Koloru Linków</title>
+    <style>
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .menu.horizontal {
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .menu a {
+            display: block;
+            width: 100px;
+            height: 40px;
+            margin: 10px;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+            color: white;
+            background-color: #3927df;
+            border: 2px solid white;
+        }
+
+        .menu a.alt {
+            background-color: #9c54cc;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background-color: #00688b;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #4682b4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu" id="menu">
+        <a href="#" class="link">Link1</a>
+        <a href="#" class="link">Link2</a>
+        <a href="#" class="link">Link3</a>
+    </div>
+    <div class="buttons">
+        <button onclick="togglePosition()">Zmień położaenie</button>
+        <button onclick="toggleColor()">Zmień kolor</button>
+    </div>
+
+    <script>
+        const menu = document.getElementById('menu');
+        const links = document.getElementsByClassName('link');
+
+        let Horizontal = false;
+        let Color = false;
+
+        function togglePosition() {
+            if (Horizontal) {
+                menu.classList.remove('horizontal');
+            } else {
+                menu.classList.add('horizontal');
+            }
+            Horizontal = !Horizontal;
+        }
+
+        function toggleColor() {
+            for (let i = 0; i < links.length; i++) {
+                if (Color) {
+                    links[i].classList.remove('alt');
+                } else {
+                    links[i].classList.add('alt');
+                }
+            }
+            Color = !iColor;
+        }
+    </script>
+</body>
+
+</html>

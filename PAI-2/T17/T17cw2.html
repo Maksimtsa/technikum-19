@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Position RGB</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        div {
+            background-color: lightgray;
+            width: 255px;
+            height: 255px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="rgb-values"></p>
+    </div>
+
+    <script>
+        const body = document.querySelector("body");
+        const div = document.querySelector("div");
+        const rgbValues = document.getElementById("rgb-values");
+        const mousePositionInfo = document.getElementById("mouse-position-info");
+
+        div.addEventListener("mousemove", function (e) {
+            const mouseR = e.offsetX;
+            const mouseG = e.offsetY;
+            const mouseB = Math.ceil((mouseR + mouseG) / 2);
+
+
+            body.style.backgroundColor = `rgb(${mouseR}, ${mouseG}, ${mouseB})`;
+            rgbValues.textContent = `R = ${mouseR} G = ${mouseG} B = ${mouseB}`;
+        });
+    </script>
+</body>
+
+</html>

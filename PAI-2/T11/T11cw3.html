@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="out"></p>
+    <script>
+        class Circle {
+            constructor(radius) {
+                this.radius = radius;
+            }
+
+            area() {
+                return Math.PI * (radius ** 2)
+            }
+
+            circuit() {
+                return (2 * Math.PI) * radius
+            }
+
+        }
+        let radius = Number(prompt("Podaj promień koła"))
+
+        const circle = new Circle(radius);
+
+        let outputHTML = '';
+        outputHTML += `<p>Pole: ${circle.area()}</p>`;
+        outputHTML += `<p>Obwód: ${circle.circuit()}</p>`;
+
+
+        document.getElementById('out').innerHTML = outputHTML;
+
+    </script>
+</body>
+
+</html>

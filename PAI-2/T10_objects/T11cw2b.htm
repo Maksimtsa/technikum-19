@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Trójkąty prostokątne</h1>
+    <div id="output"></div>
+
+    <script>
+        function Triangle(a, b) {
+            this.a = a;
+            this.b = b;
+
+            this.hypotenuse = function () {
+                return Math.sqrt(this.a * this.a + this.b * this.b);
+            };
+            this.area = function () {
+                return (this.a * this.b) / 2;
+            };
+            this.circuit = function () {
+                const c = this.hypotenuse();
+                return this.a + this.b + c;
+            };
+        }
+
+        const triangles = [
+            new Triangle(3, 5),
+            new Triangle(6, 4),
+            new Triangle(78, 35)
+        ];
+
+        let outputHTML = '';
+        for (let i = 0; i < triangles.length; i++) {
+            outputHTML += `<h2>Trójkąt ${i + 1}</h2>`;
+            outputHTML += `<p>Długość przeciwprostokątnej: ${triangles[i].hypotenuse()}</p>`;
+            outputHTML += `<p>Pole: ${triangles[i].area()}</p>`;
+            outputHTML += `<p>Obwód: ${triangles[i].circuit()}</p>`;
+        }
+
+        document.getElementById('output').innerHTML = outputHTML;
+    </script>
+</body>
+
+</html>

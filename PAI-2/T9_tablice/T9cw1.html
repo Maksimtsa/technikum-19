@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Lista zakupów</h1>
+    <ol id="output"></ol>
+    <script>
+        let tab = ['Mleko', 'Jajka', 'Płatki_śniadaniowe', 'Salami', 'Sok'];
+        let list = document.getElementById("output");
+        for (let i = 0; i < tab.length; i++) {
+            list.innerHTML += `<li>${tab[i]}</li>`;
+        }
+    </script>
+</body>
+
+</html>

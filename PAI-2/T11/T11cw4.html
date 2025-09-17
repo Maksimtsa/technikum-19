@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="output"></p>
+    <script>
+        class Person {
+            constructor(firstName, lastName, age) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+            }
+
+            fullname() {
+                return `${this.firstName} ${this.lastName}`
+            }
+        }
+
+        class School {
+            constructor(teacher, subject, schoolClass, student) {
+                this.teacher = teacher;
+                this.subject = subject;
+                this.schoolClass = schoolClass;
+                this.student = student;
+            }
+        }
+        let teacher = new Person("Jan", "Kowalski ", 54)
+        let student = new Person("Adam", "Nowak", 15)
+        let T19 = new School(teacher, "tworzenie stron", "3IA1", student)
+
+        let output = `
+        Nauczyciel ${T19.teacher.firstName} ${T19.teacher.lastName} uczy przedmiotu ${T19.subject}.<br>
+        Uczeń ${T19.student.firstName} ${T19.student.lastName} chodzi do klasy ${T19.schoolClass}, której wychowawcą jest ${T19.teacher.firstName} ${T19.teacher.lastName}.`;
+
+        document.getElementById("output").innerHTML = output;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        fieldset {
+            background-color: lightgray;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            border-radius: 4%;
+            flex-direction: column;
+            margin: 2px;
+        }
+
+        #butt {
+            background-color: darkgray;
+            border: none;
+            width: 50px;
+            height: 20px;
+            border-radius: 10%;
+            margin: 5px;
+        }
+
+        #butt:hover {
+            background-color: rgb(129, 129, 129);
+        }
+
+        input {
+            width: 40px;
+            background-color: rgb(196, 196, 196);
+            border: none;
+        }
+
+        #calc {
+            margin: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <form method="get">
+            <legend id="calc">KALKULATOR</legend>
+            <label>a: <input type="number" name="numberA" value="" style="height: 13px" style="width: 3px"> </label>
+            </br>
+            <label>b: <input type="number" name="numberB" value=""> </label></br>
+            <input id="butt" type="button" value="+">
+            <input id="butt" type="button" value="-"> </br>
+            <input id="butt" type="button" value="*">
+            <input id="butt" type="button" value="/">
+            <p id="out"></p>
+        </form>
+    </fieldset>
+
+    <script>
+        const input = document.querySelectorAll("input");
+        const output = document.getElementById("out")
+
+        input[2].addEventListener("click", () => {
+            let a = parseFloat(input[0].value);
+            let b = parseFloat(input[1].value);
+            let c = a + b;
+
+            output.innerText = `Suma liczb ${a} i ${b}: ${c}`;
+        })
+
+        input[3].addEventListener("click", () => {
+            let a = parseFloat(input[0].value);
+            let b = parseFloat(input[1].value);
+            let c = a - b;
+
+            output.innerText = `Różnica liczb ${a} i ${b}: ${c}`;
+        })
+
+        input[4].addEventListener("click", () => {
+            let a = parseFloat(input[0].value);
+            let b = parseFloat(input[1].value);
+            let c = a * b;
+
+            output.innerText = `Iloczyn liczb ${a} i ${b}: ${c}`;
+        })
+
+        input[5].addEventListener("click", () => {
+            let a = parseFloat(input[0].value);
+            let b = parseFloat(input[1].value);
+            if (b != 0) {
+                let c = a / b;
+                output.innerText = `Różnica liczb ${a} i ${b}: ${c}`;
+            }
+            else {
+                output.innerHTML = "Nie można dzielić przez 0";
+            }
+        })
+    </script>
+</body>
+
+</html>

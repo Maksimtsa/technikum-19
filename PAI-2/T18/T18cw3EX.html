@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        #field {
+            background-color: rgb(122, 128, 124);
+            width: 400px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            border: 2px solid;
+            border-radius: 5%;
+            margin: 0px;
+        }
+
+        label {
+            height: 4vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        legend {
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+        }
+
+        #out {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #btn {
+            height: 40px;
+            width: 100px;
+            background-color: rgb(129, 182, 182);
+            border: 2px solid;
+            border-radius: 8%;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        #btn:hover {
+            background-color: rgb(106, 150, 150);
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset id="field">
+        <form method="get">
+            <legend>Policz koszt ogłoszenia</legend>
+            <label id="fielLabel">Liczba ogłoszeń: </label>
+            <label id="fielLabel"><input type="number" name="amount" value="" style="height: 14px"></label>
+            <br>
+            <label id="fielLabel"><input type="radio">Jestem stałym klientem</label>
+            <label><input type="button" id="btn" value="KALKULACJA"></label>
+            <p id="out"></p>
+        </form>
+    </fieldset>
+    <script>
+        const rad = document.querySelector("input[type='radio']");
+        const out = document.querySelector("#out");
+        const btn = document.querySelector("#btn");
+
+        btn.addEventListener("click", function () {
+            const amount = parseFloat(document.querySelector("input[name='amount']").value);
+
+            if (amount < 1) {
+                out.textContent = "Podałeś złą wartość.";
+                return;
+            }
+
+            if (!rad.checked) {
+                if (amount >= 1 && amount <= 40) {
+                    out.textContent = `Twoje ogłoszenia będą kosztować: ${3 * amount} zł.`;
+                } else if (amount >= 41) {
+                    out.textContent = `Twoje ogłoszenia będą kosztować: ${2 * amount} zł.`;
+                }
+            } else {
+                if (amount >= 1 && amount <= 40) {
+                    out.textContent = `Twoje ogłoszenia będą kosztować: ${Math.round(2.70 * amount)} zł.`;
+                } else if (amount >= 41) {
+                    out.textContent = `Twoje ogłoszenia będą kosztować: ${Math.round(1.70 * amount)} zł.`;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

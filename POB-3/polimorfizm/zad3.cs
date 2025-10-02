@@ -41,7 +41,7 @@ namespace zad2
     {
         static void Main(string[] args)
         {
-            List<int>  = new List<int>();
+            List<Shape> list = new List<Shape> {new Circle(2), new Rectangle(2, 9) };
 
         }
     }

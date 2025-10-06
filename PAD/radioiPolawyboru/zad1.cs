@@ -12,9 +12,9 @@ namespace zad1
         private void buttonOblicz_Click(object sender, EventArgs e)
         {
 
-            double number1, number2, result = 0;
+            double A, B, result = 0;
 
-            if (!double.TryParse(textBoxA.Text, out number1) || !double.TryParse(textBoxB.Text, out number2))
+            if (!double.TryParse(textBoxA.Text, out A) || !double.TryParse(textBoxB.Text, out B))
             {
                 MessageBox.Show("Podaj poprawne liczby zmiennoprzecinkowe.", "Błąd danych", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -22,26 +22,26 @@ namespace zad1
 
             if (radioButton1.Checked)
             {
-                result = number1 + number2;
+                result = A + B;
             }
             else if (radioButton2.Checked)
             {
-                result = number1 - number2;
+                result = A - B;
             }
             else if (radioButton3.Checked)
             {
-                result = number1 * number2;
+                result = A * B;
             }
             else if (radioButton4.Checked)
             {
-                if (number2 == 0)
+                if (B == 0)
                 {
                     textBoxW.Text = "Nie można dzielić przez zero";
                     return;
                 }
                 else
                 {
-                    result = number1 / number2;
+                    result = A / B;
                 }
             }
             else

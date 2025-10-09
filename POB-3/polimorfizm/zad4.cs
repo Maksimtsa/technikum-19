@@ -1,6 +1,4 @@
-using System.Threading.Channels;
-
-namespace zad3
+namespace zad4
 {
     class Vehicle
     {
@@ -22,7 +20,7 @@ namespace zad3
     {
         static void Main(string[] args)
         {
-            Car veh = new Car();
+            Vehicle veh = new Car();
             veh.Drive();
         }
     }

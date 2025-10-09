@@ -1,6 +1,4 @@
-using System;
-
-namespace zad2
+namespace _3
 {
     abstract class Shape
     {
@@ -10,30 +8,30 @@ namespace zad2
     class Circle : Shape
     {
         public double Radius { get; set; }
-        public Circle(double radius)
+        public Circle(double r)
         {
-            Radius = radius;
+            Radius = r;
         }
+
         public override double GetArea()
         {
-            return Math.PI * Radius * Radius;
+           return Math.PI * Radius * Radius;
         }
     }
 
     class Rectangle : Shape
     {
-        public double Width { get; set; }
-        public double Height { get; set; }
+        public double SideA { get; set; }
 
-        public Rectangle(double width, double height)
+        public double SideB { get; set; }
+        public Rectangle(double a, double b)
         {
-            Width = width;
-            Height = height;
+            SideA = a;
+            SideB = b;
         }
-
         public override double GetArea()
         {
-            return Width * Height;
+            return SideA * SideB;
         }
     }
 
@@ -41,8 +39,10 @@ namespace zad2
     {
         static void Main(string[] args)
         {
-            List<Shape> list = new List<Shape> {new Circle(2), new Rectangle(2, 9) };
+            List<Shape> Shape = new List<Shape> {new Circle(2), new Rectangle(2, 5) };
 
+            Console.WriteLine("Pole koła: " + Shape[0].GetArea());
+            Console.WriteLine("Pole prostokąta: " + Shape[1].GetArea());
         }
     }
 }

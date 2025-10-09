@@ -1,49 +1,23 @@
+using System.Threading.Channels;
+
 namespace zad3
 {
-    abstract class Shape
+    class Vehicle
     {
-        public abstract double GetArea();
+        public void Drive() => Console.WriteLine("drive");
     }
 
-    class Circle : Shape
+    class Car : Vehicle
     {
-        public double Radius { get; set; }
-
-        public Circle(double radius)
-        {
-            Radius = radius;
-        }
-
-        public override double GetArea()
-        {
-            return Math.PI * Radius * Radius;
-        }
-    }
-
-    class Rectangle : Shape
-    {
-        public double SideA { get; set; }
-
-        public double SideB { get; set; }
-        public Rectangle(double a, double b)
-        {
-            SideA = a;
-            SideB = b;
-        }
-        public override double GetArea()
-        {
-            return SideA * SideB;
-        }
+        public new void Drive() => Console.WriteLine("samochód jedzie");
     }
 
     internal class Program
     {
         static void Main(string[] args)
         {
-            List<Shape> Shape = new List<Shape> { new Circle(2), new Rectangle(2, 5) };
-
-            Console.WriteLine(Shape[0].GetArea());
-            Console.WriteLine(Shape[1].GetArea());
+            Car veh = new Car();
+            veh.Drive();
         }
     }
 }

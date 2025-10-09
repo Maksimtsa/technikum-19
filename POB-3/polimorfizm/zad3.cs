@@ -1,4 +1,4 @@
-namespace _3
+namespace zad3
 {
     abstract class Shape
     {
@@ -8,14 +8,15 @@ namespace _3
     class Circle : Shape
     {
         public double Radius { get; set; }
-        public Circle(double r)
+
+        public Circle(double radius)
         {
-            Radius = r;
+            Radius = radius;
         }
 
         public override double GetArea()
         {
-           return Math.PI * Radius * Radius;
+            return Math.PI * Radius * Radius;
         }
     }
 
@@ -39,10 +40,10 @@ namespace _3
     {
         static void Main(string[] args)
         {
-            List<Shape> Shape = new List<Shape> {new Circle(2), new Rectangle(2, 5) };
+            List<Shape> Shape = new List<Shape> { new Circle(2), new Rectangle(2, 5) };
 
-            Console.WriteLine("Pole koła: " + Shape[0].GetArea());
-            Console.WriteLine("Pole prostokąta: " + Shape[1].GetArea());
+            Console.WriteLine(Shape[0].GetArea());
+            Console.WriteLine(Shape[1].GetArea());
         }
     }
 }

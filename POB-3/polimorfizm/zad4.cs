@@ -1,0 +1,49 @@
+namespace zad3
+{
+    abstract class Shape
+    {
+        public abstract double GetArea();
+    }
+
+    class Circle : Shape
+    {
+        public double Radius { get; set; }
+
+        public Circle(double radius)
+        {
+            Radius = radius;
+        }
+
+        public override double GetArea()
+        {
+            return Math.PI * Radius * Radius;
+        }
+    }
+
+    class Rectangle : Shape
+    {
+        public double SideA { get; set; }
+
+        public double SideB { get; set; }
+        public Rectangle(double a, double b)
+        {
+            SideA = a;
+            SideB = b;
+        }
+        public override double GetArea()
+        {
+            return SideA * SideB;
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Shape> Shape = new List<Shape> { new Circle(2), new Rectangle(2, 5) };
+
+            Console.WriteLine(Shape[0].GetArea());
+            Console.WriteLine(Shape[1].GetArea());
+        }
+    }
+}

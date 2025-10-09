@@ -7,14 +7,15 @@
 <body>
 
 <?php
-    function formatujTekst($text) {
-        return "<p style=\"color: blue; font-family: Arial; font-size: 20px;\">$text</p>";
-    }
+    function textFormat($text) {
+    $color = "blue";
+    $font = "Arial";
+    $size = "20px";
 
+    echo "<p style='color: $color; font-family: $font; font-size: $size;'>$text</p>";
+}
 
-    echo formatujTekst("To jest przykładowy tekst.");
-
+    textFormat("To jest przykładowy tekst.");
 ?>
-
 </body>
 </html>

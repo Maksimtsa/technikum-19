@@ -61,7 +61,15 @@
         echo "<pre>" . $textRemoved . "</pre>";
 
         echo "<h2>i)</h2>";
-        
+        echo "<pre>" . str_replace("Ja łagodnie uśmiechnięta", "", $text) . "</pre>";
+
+        echo "<h2>j)</h2>";
+        $textWithIntro = "To piosenka Sanah: " . $text;
+        echo "<pre>" . $textWithIntro . "</pre>"; 
+
+        echo "<h2>k)</h2>";
+        $textUpper = mb_strtoupper($text, "UTF-8");
+        echo "<pre>" . $textUpper . "</pre>";
     ?>
 </body>
 </html>

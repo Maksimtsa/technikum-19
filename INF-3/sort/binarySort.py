@@ -19,5 +19,5 @@ seed(3)
 t = [randint(1, 100) for i in range(10)]
 t.sort()
 p = binary_search(t, 9)
-
+print(t)
 print(p)

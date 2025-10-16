@@ -34,12 +34,13 @@
         echo $sentence;
 
         echo "<h2>d)</h2>";
-        if(strstr($text, "ą") !== True){
+        if (strstr($text, "ą") !== false) {
             echo "jest ą";
-        }
-        else{
+        } 
+        else {
             echo "brak litery ą";
         }
+
 
         echo "<h2>e)</h2>";
         echo substr($text, -24);
@@ -70,6 +71,25 @@
         echo "<h2>k)</h2>";
         $textUpper = mb_strtoupper($text, "UTF-8");
         echo "<pre>" . $textUpper . "</pre>";
+
+        echo "<h2>l)</h2>";
+        $wordsArray = explode(" ", $text);
+        echo "<pre>";
+        print_r($wordsArray);
+        echo "</pre>";
+
+        echo "<h2>m)</h2>";
+        $textCh = str_replace(" ", "***", $text);
+        echo "<pre>$textCh</pre>";
+
+        echo "<h2>n) Sposób 1</h2>";
+        $linesN = explode("\n", $text);
+        for ($i = 0; $i < 5; $i++) {
+            echo $linesN[$i] . "<br>";
+        }
+
+        echo "<h2>n) Sposób 2</h2>";
+        
     ?>
 </body>
 </html>

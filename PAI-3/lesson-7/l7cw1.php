@@ -89,7 +89,11 @@
         }
 
         echo "<h2>n) Sposób 2</h2>";
+        $linesN = preg_split('/\r?\n/', $text);
         
+        for ($i = 0; $i <= 4; $i++) {
+            echo $linesN[$i] . "<br>";
+        }
     ?>
 </body>
 </html>

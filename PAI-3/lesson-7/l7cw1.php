@@ -19,7 +19,7 @@
         Ja łagodnie uśmiechnięta";
 
         echo "<h2>a)</h2>";
-        echo "<pre>$text</pre>";
+        echo nl2br($text);
 
         echo "<h2>b)</h2>";
         $char = strlen($text);
@@ -72,10 +72,17 @@
         $textUpper = mb_strtoupper($text, "UTF-8");
         echo "<pre>" . $textUpper . "</pre>";
 
-        echo "<h2>l)</h2>";
+        echo "<h2>l) 1 sposób</h2>";
         $wordsArray = explode(" ", $text);
         echo "<pre>";
         print_r($wordsArray);
+        echo "</pre>";
+
+        echo "<h2>l) 2 sposób</h2>";
+        $wordsL = preg_split('/\s+/', $text);
+        $wordsLP = print_r($wordsL, true);
+        echo "<pre>";
+        print_r($wordsLP);
         echo "</pre>";
 
         echo "<h2>m)</h2>";
@@ -84,7 +91,7 @@
 
         echo "<h2>n) Sposób 1</h2>";
         $linesN = explode("\n", $text);
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i <= 4; $i++) {
             echo $linesN[$i] . "<br>";
         }
 

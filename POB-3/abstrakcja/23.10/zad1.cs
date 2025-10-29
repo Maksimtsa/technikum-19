@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+
 namespace zad1
 {
     internal class Program
@@ -9,6 +10,7 @@ namespace zad1
             public abstract double Pole();
             public abstract double Obwod();
         }
+
         class Kolo : Figura
         {
             public double Promien { get; set; }
@@ -20,15 +22,15 @@ namespace zad1
 
             public override double Pole()
             {
-                double area = Math.PI * Promien;
-                return area;
+                return Math.PI * Math.Pow(Promien, 2);
             }
+
             public override double Obwod()
             {
-                double obwod = 2 * Math.PI * Promien;
-                return obwod;
+                return 2 * Math.PI * Promien;
             }
         }
+        
         class Prostokat : Figura
         {
             public double Dlugosc { get; set; }
@@ -42,54 +44,56 @@ namespace zad1
 
             public override double Pole()
             {
-                double area = Dlugosc * Szerokosc;
-                return area;
+                return Dlugosc * Szerokosc;
             }
+
             public override double Obwod()
             {
-                double obwod = (Dlugosc + Szerokosc) * 2;
-                return obwod;
+                return 2 * (Dlugosc + Szerokosc);
             }
         }
+
         class Trojkat : Figura
         {
             public double BokA { get; set; }
             public double BokB { get; set; }
             public double BokC { get; set; }
-            public double Wyssokosc { get; set; }
+            public double Wysokosc { get; set; }
 
             public Trojkat(double bokA, double wysokosc, double bokB, double bokC)
             {
                 BokA = bokA;
                 BokB = bokB;
                 BokC = bokC;
-                Wyssokosc = wysokosc;
+                Wysokosc = wysokosc;
             }
 
             public override double Pole()
             {
-                double area = (BokA * Wyssokosc)/2;
-                return area;
+                return (BokA * Wysokosc) / 2;
             }
+
             public override double Obwod()
             {
-                double obwod = BokA + BokB + BokC;
-                return obwod;
+                return BokA + BokB + BokC;
             }
         }
 
         static void Main(string[] args)
         {
-            List<Figura> figuras = new List<Figura>
+            List<Figura> figury = new List<Figura>
             {
                 new Kolo(3),
                 new Prostokat(8, 4),
                 new Trojkat(2, 3, 4, 5)
-
             };
-            foreach(var items in Figura)
-            {
 
+            foreach (var figura in figury)
+            {
+                Console.WriteLine($"Typ figury: {figura.GetType().Name}");
+                Console.WriteLine($"Pole: {figura.Pole():F2}");
+                Console.WriteLine($"Obwód: {figura.Obwod():F2}");
+                Console.WriteLine();
             }
         }
     }

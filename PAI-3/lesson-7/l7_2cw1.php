@@ -9,32 +9,16 @@
     <?php
         echo "Witamy dnia " . date("d.m.Y") . "<br>"; 
 
-        $day = date("l");
-        $month = date("F");
-        switch ($day) {
-            case "Monday": $day = "poniedziałek"; break;
-            case "Tuesday": $day = "wtorek"; break;
-            case "Wednesday": $day = "środa"; break;
-            case "Thursday": $day = "czwartek"; break;
-            case "Friday": $day = "piątek"; break;
-            case "Saturday": $day = "sobota"; break;
-            case "Sunday": $day = "niedziela"; break;
-        }
-        switch ($month) {
-            case "January": $month = "stycznia"; break;
-            case "February": $month = "lutego"; break;
-            case "March": $month = "marca"; break;
-            case "April": $month = "kwietnia"; break;
-            case "May": $month = "maja"; break;
-            case "June": $month = "czerwca"; break;
-            case "July": $month = "lipca"; break;
-            case "August": $month = "sierpnia"; break;
-            case "September": $month = "września"; break;
-            case "October": $month = "października"; break;
-            case "November": $month = "listopada"; break;
-            case "December": $month = "grudnia"; break;
-        }
-        echo "Witamy w " . $day . ", dnia " . date("d") . " $month " . date("Y") . " roku";
+        $dayTab = ["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"];
+        $monthTab = [
+            1 => "stycznia", 2 => "lutego", 3 => "marca", 4 => "kwietnia", 5 => "maja", 6 => "czerwca",
+            7 => "lipca", 8 => "sierpnia", 9 => "września", 10 => "października", 11 => "listopada", 12 => "grudnia"
+        ];
+
+        $dayOfWeek = $dayTab[date("N")];
+        $month = $monthTab[date("n")];
+
+        echo "Witamy w " . $dayOfWeek . ", dnia " . date("d") . " " . $month . " " . date("Y") . " roku";
     ?>
 </body>
 </html>

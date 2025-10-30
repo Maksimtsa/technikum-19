@@ -24,9 +24,11 @@
         echo implode("=>", $tabRange);
 
 
-        echo "<h3>b)</h3>";
         $folder = "L7_2funkcje";
-        $plik = $folder . "/ciag.txt";
+        $plik = $folder . "/ciag.txt";  
+        if (!file_exists($folder)) {
+            mkdir($folder, 0755);
+        }
         $fp = fopen($plik, "a");
         if ($fp) {
             $ciag = implode("=>", $tabRange) . "\n";

@@ -9,7 +9,7 @@
     <?php
         $products = ['banan', 'jabłko', 'gruszka', 'śliwka', 'pomidor'];
 
-        echo "<h3>Wyświetlenie tablicy trzema różnymi funkcjami</h3>";
+        echo "<h3>a)</h3>";
         echo "<pre>";
         print_r($products);
         echo "</pre>";
@@ -21,27 +21,28 @@
         echo "</pre>";
         sort($products);
 
-        echo "<h3>Tablica po sortowaniu rosnącym:</h3>";
+        echo "<h3>b)</h3>";
+        sort($products);
         echo "<pre>";
         print_r($products);
         echo "</pre>";
 
-        echo "<h3>Dodanie nowego produktu na początku tablicy</h3>";
+        echo "<h3>c)</h3>";
         array_unshift($products, 'ogórek');
         $count = count($products);
         echo "<pre>";
         print_r($products);
         echo "</pre>";
-        echo "Liczba elementów w tablicy: $count<br>";
+        echo "Liczba elementów: $count<br>";
 
-        echo "<h3>Usunięcie ostatniego elementu i sortowanie malejące</h3>";
-        array_shift($products);
+        echo "<h3>d)</h3>";
+        array_pop($products);
         rsort($products);
         echo "<pre>";
         print_r($products);
         echo "</pre>";
 
-        echo "<h3>Wyświetlenie listy numerowanej</h3>";
+        echo "<h3>e)</h3>";
         echo "<h2>Lista zakupów</h2>";
         echo "<ol>";
         foreach($products as $item) {

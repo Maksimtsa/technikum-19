@@ -32,3 +32,24 @@ with open("zadanie4.txt", 'a') as file:
     file.write(f"zadanie c)\n{count0} {count1}\n")
 
 #zad d)
+ddd = dict()
+for strin in numbers:
+    dd = False
+    i = 2
+    while dd == False:
+        while i <= 16:
+            if len(strin) == i:
+                if not ddd.get(f'{i}'):
+                    num = 0
+                else:
+                    num = ddd.get(f'{i}')
+                num = int(num)
+                num += 1
+                ddd.update({f'{i}': f'{num}'})
+                dd = True
+            i += 1
+
+for j in range(15):
+    j += 2
+    il = ddd.get(f'{j}')
+    print(f'długość: {j}, ilość: {il}')

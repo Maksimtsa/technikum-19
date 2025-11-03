@@ -1,8 +1,5 @@
-a, b, c = map(int, input().split())
-
-if a > b > c:
-    print(b)
-elif b > a > c:
-    print(a)
-elif a > c > b:
-    print(c)
+n = int(input())
+for _ in range(n):
+    nums = list(map(int, input().split()))
+    nums.sort()
+    print(nums[1])

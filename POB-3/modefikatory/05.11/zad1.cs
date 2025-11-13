@@ -5,6 +5,7 @@ namespace zad
     class Jechac
     {
         protected int Predkosc { get; set; }
+        private string Nazwa { get; set; }
 
         public void Jedzie()
         {
@@ -31,7 +32,7 @@ namespace zad
         }
         public void WyświetlanieCeny()
         {
-            if(Cena <= 0)
+            if (Cena <= 0)
             {
                 Console.WriteLine("Źle podana cena");
             }

@@ -19,7 +19,6 @@
     $result = "";
 
     if (isset($_POST['send'])) {
-        if (isset($_POST['num1']) && isset($_POST['num2']) && isset($_POST['operation'])) {
             $num1 = $_POST['num1'];
             $num2 = $_POST['num2'];
             $operation = $_POST['operation'];
@@ -31,22 +30,22 @@
             if ($error_num1 == "" && $error_num2 == "" && $error_operation == "") {
                 switch ($operation) {
                     case "+": 
-                        $result = $num1 + $num2; 
+                        $result = "$num1 + $num2 = " . $num1 + $num2; 
                         break;
                     case "-": 
-                        $result = $num1 - $num2; 
+                        $result = "$num1 - $num2 = " . $num1 - $num2; 
                         break;
                     case "*": 
-                        $result = $num1 * $num2; 
+                        $result = "$num1 * $num2 = " . $num1 * $num2; 
                         break;
                     case "/":
                         if ($num2 == 0) $result = "Błąd: Dzielenie przez zero";
-                        else $result = $num1 / $num2;
+                        else $result = "$num1 / $num2 = " . $num1 / $num2; 
                         break;
                     default: $result = "Nieznane działanie";
                 }
             }
-        }
+        
     }
 ?>
 <form action="" method="POST">

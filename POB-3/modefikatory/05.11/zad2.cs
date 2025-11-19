@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-namespace zad1
-{
-    public class Uczen
+public class Uczen
     {
         public string Imie { get; private set; }
         public string Nazwisko { get; private set; }
@@ -32,9 +29,9 @@ namespace zad1
             return Oceny.Average();
         }
 
-        public override string ToString()
+        public string Info()
         {
-            return $"{Imie} {Nazwisko} – Średnia: {Srednia()}";
+            return $"{Imie} {Nazwisko}:  Srednia: {Srednia()}";
         }
     }
 
@@ -59,8 +56,8 @@ namespace zad1
 
             foreach (var u in uczniowie)
             {
-                Console.WriteLine(u);
+                Console.WriteLine(u.Info());
             }
+
         }
     }
-}

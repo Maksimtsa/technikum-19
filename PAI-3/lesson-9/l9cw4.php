@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,48 +14,58 @@
         }
     </style>
 </head>
-
 <body>
     <h2>Tabliczka mnożenia</h2>
     <form method="post">
         <label>
             <strong>Podaj liczbę początkową:</strong>
-            <input type="text" name="numA">
-        </label><br>
-
+            <input type="number" name="numA">
+        </label>
+        <br>
         <label>
             <strong>Podaj liczbę końcową:</strong>
-            <input type="text" name="numB">
-        </label><br>
-
-        <button type="submit" name="send">Utwórz</button>
+            <input type="number" name="numB">
+        </label>
+        <br>
+        <button type="submit">Utwórz</button>
     </form>
 
     <?php
-        if (isset($_POST['send'])) {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST["numA"]) && isset($_POST["numB"])) {
+                $a = $_POST["numA"];
+                $b = $_POST["numB"];
 
-            if(isset($_POST['numA']) && isset($_POST['numB'])){
-                $num1 = $_POST['numA'];
-                $num2 = $_POST['numB'];
 
-                if($num1 > $num2){
-                    echo "<p><strong>Początek nie może być większy od końca!</strong></p>";
+                if ($a > $b) {
+                    echo "<p><strong>Początek nie może być większy od końca!!</strong></p>";
                 }
-                else{
-                    echo "<p>a = $num1, b = $num2</p>";
+                else {
+                    echo "<p>a = $a, b = $b </p>";
                     echo "<table>";
-                    for ($i = $num1; $i <= $num2; $i++) {
-                        echo "<tr>\n";
-                        for ($j = $num1; $j <= $num2; $j++) {
-                            echo "<td>" . ($i * $j) . "</td>\n";
+                    echo "<tr><th></th>";
+                    for ($width = $a; $width <= $b; $width++) {
+                        echo "<th>$width</th>";
+                    }
+                    echo "</tr>";
+
+                    for ($height = $a; $height <= $b; $height++) {
+                        echo "<tr>";
+                        echo "<th>$height</th>";
+
+                        for ($width = $a; $width <= $b; $width++) {
+                            echo "<td>";
+                            echo $width * $height;
+                            echo "</td>";
                         }
-                        echo "</tr>\n";
+
+                        echo "</tr>";
                     }
                     echo "</table>";
                 }
             }
         }
     ?>
-</body>
 
+</body>
 </html>

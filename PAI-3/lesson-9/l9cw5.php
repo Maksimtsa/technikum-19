@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?php
-    if (isset($_POST['send'])) {
-        $p = $_POST['p'];
-        
-        
-    }
-    ?>
     <style>
         body{
             line-height: 200%;
@@ -33,6 +26,20 @@
         <br>
         <input type="submit" name="send" value="Utwórz"></input>
     </form>
-    
+    <?php
+    if (isset($_POST['send'])) {
+        $h = $_POST['p'];
+        $char = $_POST['char'];
+
+        for ($i=1; $i <= $h; $i++) { 
+            for ($j=1; $j <= $i; $j++) { 
+                echo $char;
+            }
+            echo "<br>";
+        }
+        
+        
+    }
+    ?>
 </body>
 </html>

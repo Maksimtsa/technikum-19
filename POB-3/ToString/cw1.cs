@@ -10,7 +10,7 @@ namespace zad
             bool Pasuje(string fraza);
         }
 
-        public abstract class Publikacja
+        public abstract class Publikacja : IWyszukiwalne
         {
             public string Tytul { get; set; }
             public int RokWydania { get; set; }
@@ -21,6 +21,8 @@ namespace zad
             {
                 return Opis();
             }
+
+            public abstract bool Pasuje(string fraza);
         }
 
         public class Ksiazka : Publikacja
@@ -39,6 +41,12 @@ namespace zad
             public override string Opis()
             {
                 return $"Książka — Autor: {Autor}, Strony: {LiczbaStron}, Tytuł: {Tytul}, Rok: {RokWydania}";
+            }
+
+            public override bool Pasuje(string fraza)
+            {
+                fraza = fraza.ToLower();
+                return Tytul.ToLower().Contains(fraza) || Autor.ToLower().Contains(fraza);
             }
         }
 
@@ -59,6 +67,12 @@ namespace zad
             {
                 return $"Czasopismo — Nr: {Numer}, Typ: {MiesiecznikTygodnik}, Tytuł: {Tytul}, Rok: {RokWydania}";
             }
+
+            public override bool Pasuje(string fraza)
+            {
+                fraza = fraza.ToLower();
+                return Tytul.ToLower().Contains(fraza) || MiesiecznikTygodnik.ToLower().Contains(fraza);
+            }
         }
 
         public class Komiks : Publikacja
@@ -74,7 +88,13 @@ namespace zad
 
             public override string Opis()
             {
-                return $"Komiks — Rysownik: {AutorRysunku}, Tytuł: {Tytul}, Rok: {RokWydania}";
+                return $"Komiks — Autor: {AutorRysunku}, Tytuł: {Tytul}, Rok: {RokWydania}";
+            }
+
+            public override bool Pasuje(string fraza)
+            {
+                fraza.ToLower();
+                return Tytul.ToLower().Contains(fraza) || AutorRysunku.ToLower().Contains(fraza);
             }
         }
 
@@ -82,11 +102,26 @@ namespace zad
         {
             List<Publikacja> publikacje = new List<Publikacja>()
             {
-                
+                new Ksiazka("Adam Mickiewicz", 380, "Pan Tadeusz", 1894),
+                new Ksiazka("Adam Mickiewicz", 500, "Quo Vadis", 1886),
+                new Czasopismo(12, "Miesięcznik", "Book", 2013),
+                new Czasopismo(4, "Tygodnik", "Book", 2025),
+                new Komiks("Szymon Idzik", "Spider-Man", 1969),
+                new Komiks("Szymon Zydel", "Batman: Year One", 1967)
             };
 
+            Console.WriteLine("Podaj frazę do wyszukania: ");
+            string fraza = Console.ReadLine();
 
-            
+            Console.WriteLine("Wyniki wyszukiwania:");
+
+            foreach (var p in publikacje)
+            {
+                if (p.Pasuje(fraza))
+                {
+                    Console.WriteLine(p);
+                }
+            }
         }
     }
 }

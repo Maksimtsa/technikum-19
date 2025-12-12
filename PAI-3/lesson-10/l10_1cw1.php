@@ -7,8 +7,22 @@
 </head>
 <body>
     <?php
-        $mysqli = mysqli_connect('localhost', 'root', '', 'wazniak');
-        print_r($mysqli);
+    $dbserver = "localhost";
+    $user = "root";
+    $password = "";
+    $dbName = "wazniak";
+    $mysqli = mysqli_connect($dbserver,$user,$password,$dbName);
+    $result = mysqli_query($mysqli, "SELECT NAZWISKO, ID_ZESP FROM `pracownicy` WHERE ID_ZESP = 20 and (NAZWISKO LIKE 'M%' or NAZWISKO LIKE '%SKI')");  
+    echo "<pre>";
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        foreach($row as $key=>$value) {
+            echo $key.": ".$value." ";
+        }
+        echo "<br>";
+    }
+    
+    echo "</pre>"; 
+    mysqli_close($mysqli);
     ?>
 </body>
 </html>

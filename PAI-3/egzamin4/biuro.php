@@ -7,6 +7,13 @@
     <title>Wycieczki krajoznawcze</title>
 </head>
 <body>
+    <?php
+        $dbserver = "localhost";
+        $user = "root";
+        $password = "";
+        $dbName = "egzamin3";
+        $mysqli = mysqli_connect($dbserver,$user,$password,$dbName);
+    ?>
     <header>
         <h1>
             WITAMY W BIURZE PODRÓŻY
@@ -19,20 +26,12 @@
                 ARCHIWUM WYCIECZEK
             </h3>
             <?php
-                $dbserver = "localhost";
-                $user = "root";
-                $password = "";
-                $dbName = "egzamin4";
-                $mysqli = mysqli_connect($dbserver,$user,$password,$dbName);
-                $result = mysqli_query($mysqli, "SELECT id, cel, cena
+                $query1 = mysqli_query($mysqli, "SELECT id, cel, cena
                 FROM wycieczki
                 WHERE dostepna = FAlSE");  
-                echo "<pre>";
-                while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                    foreach($row as $key=>$value) {
-                        echo $key.": ".$value." ";
-                    }
-                    echo "<br>";
+                while($row = mysqli_fetch_array($query1)){
+                        echo "$row[0]. $row[1], cena: $row[2]";
+                        print("<br>");
                 }
             ?>
         </article>
@@ -60,6 +59,14 @@
             <h3>
                 TU BYLIŚMY
             </h3>
+            <?php
+                $query2 = mysqli_query($mysqli, "SELECT nazwaPliku, podpis
+                FROM zdjecia
+                ORDER BY podpis DESC");  
+                while($row = mysqli_fetch_array($query2)){
+                    echo "<img src='obrazy/$row[0]' alt='$row[1]'>";
+                }
+            ?>
         </section>
         <section>
             <h3>
@@ -70,7 +77,10 @@
         </section>
     </main>
     <footer>
-        <p>Stronę wykonał: </p>
+        <p>Stronę wykonał: Maksim Tsaryk</p>
     </footer>
+    <?php
+        mysqli_close($mysqli)
+    ?>
 </body>
 </html>

@@ -1,0 +1,17 @@
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\_3.DanePodstawowe.resources
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\3.csproj.GenerateResource.cache
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\3.AssemblyInfoInputs.cache
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\3.AssemblyInfo.cs
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\3.csproj.CoreCompileInputs.cache
+C:\Users\Uczen\Desktop\3\3\bin\Debug\net8.0-windows\3.exe
+C:\Users\Uczen\Desktop\3\3\bin\Debug\net8.0-windows\3.deps.json
+C:\Users\Uczen\Desktop\3\3\bin\Debug\net8.0-windows\3.runtimeconfig.json
+C:\Users\Uczen\Desktop\3\3\bin\Debug\net8.0-windows\3.dll
+C:\Users\Uczen\Desktop\3\3\bin\Debug\net8.0-windows\3.pdb
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\3.dll
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\refint\3.dll
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\3.pdb
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\3.genruntimeconfig.cache
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\ref\3.dll
+C:\Users\Uczen\Desktop\3\3\obj\Debug\net8.0-windows\_3.DaneKontaktowe.resources

@@ -24,10 +24,11 @@ class Program
         uczniowie[4] = new Uczen("Ola", 4.75);
 
 
-        string name = Console.ReadLine();
-        for(int i = 0; i <= uczniowie.Length; i++)
+        //zad 1
+        string name = "Ania";
+        for (int i = 0; i < uczniowie.Length; i++)
         {
-            if (uczniowie[i].Imie == name)
+            if (uczniowie[i].Imie == name)  
             {
                 Console.WriteLine("Tak");
             }
@@ -36,5 +37,37 @@ class Program
                 Console.WriteLine("Nie");
             }
         }
+
+        //zad 2
+        double maxAvg = uczniowie[0].Srednia;
+        for(int i = 0; i < uczniowie.Length; i++)
+        {
+            if (uczniowie[i].Srednia > maxAvg)
+            {
+                maxAvg = uczniowie[i].Srednia;
+            }
+        }
+        Console.WriteLine($"Najwiękasz średnia: {maxAvg}");
+
+        //zad 3
+        double minAvg = uczniowie[0].Srednia;
+        for (int i = 0; i < uczniowie.Length; i++)
+        {
+            if (uczniowie[i].Srednia < minAvg)
+            {
+                minAvg = uczniowie[i].Srednia;
+            }
+        }
+        Console.WriteLine($"Najmniejsza średnia: {minAvg}");
+
+        //zad 4
+        int count = 0;
+        double sum = 0;
+        for (int i = 0; i < uczniowie.Length; i++)
+        {
+            sum += uczniowie[i].Srednia;
+            count++;
+        }
+        Console.WriteLine($"Średnia klasy: {sum / count}");
     }
 }

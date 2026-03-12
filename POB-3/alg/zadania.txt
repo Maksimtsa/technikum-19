@@ -1,0 +1,148 @@
+ZADANIE 1 – System ocen uczniów
+
+Utwórz klasę `Uczen`, a następnie wykonaj operacje algorytmiczne na tablicy obiektów.
+
+Utwórz klasę:
+class Uczen
+{
+    public string Imie { get; set; }
+    public double Srednia { get; set; }
+
+    public Uczen(string imie, double srednia)
+    {
+        Imie = imie;
+        Srednia = srednia;
+    }
+}
+W programie głównym:
+Utwórz tablicę 5 uczniów.
+Wykonaj algorytmy:
+
+1.  Wyszukaj ucznia o podanym imieniu (wyszukiwanie liniowe).
+2.  Znajdź ucznia z najwyższą średnią.
+3.  Znajdź ucznia z najniższą średnią.
+4.  Oblicz średnią ocen całej klasy.
+5.  Posortuj uczniów rosnąco według średniej (np. sortowanie bąbelkowe).
+
+---
+
+ZADANIE 2 – Magazyn produktów
+
+Utwórz klasę:
+
+class Produkt
+{
+    public string Nazwa { get; set; }
+    public decimal Cena { get; set; }
+
+    public Produkt(string nazwa, decimal cena)
+    {
+        Nazwa = nazwa;
+        Cena = cena;
+    }
+}
+
+
+Zadania
+1. Utwórz tablicę produktów.
+2.  Posortuj produkty alfabetycznie po nazwie.
+3.  Wyszukaj produkt po nazwie:  
+
+najpierw liniowo
+następnie binarnie (po posortowaniu)
+4.  Oblicz:
+
+najdroższy produkt
+najtańszy produkt
+średnią cenę produktów
+5. Usuń produkt o podanej nazwie (utwórz nową tablicę).
+
+---
+
+ZADANIE 3 – System rejestracji samochodów
+
+Klasa:
+
+class Samochod
+{
+    public string Marka { get; set; }
+    public int RokProdukcji { get; set; }
+    public int Przebieg { get; set; }
+
+    public Samochod(string marka, int rok, int przebieg)
+    {
+        Marka = marka;
+        RokProdukcji = rok;
+        Przebieg = przebieg;
+    }
+}
+Wykonaj:
+
+1. Policz samochody starsze niż 10 lat.
+2. Wyszukaj samochód o podanej marce.
+3. Znajdź samochód z najmniejszym przebiegiem.
+4. Oblicz średni przebieg.
+5. Odwróć kolejność tablicy samochodów.
+
+---
+
+ZADANIE 4 – Elektroniczny dziennik
+
+Klasa z metodą:
+
+class Uczen
+{
+    public string Imie { get; set; }
+    private int[] Oceny;
+
+    public Uczen(string imie, int[] oceny)
+    {
+        Imie = imie;
+        Oceny = oceny;
+    }
+
+    public double ObliczSrednia()
+    {
+        int suma = 0;
+        for (int i = 0; i < Oceny.Length; i++)
+        {
+            suma += Oceny[i];
+        }
+        return (double)suma / Oceny.Length;
+    }
+}
+
+Zadania
+1. Utwórz tablicę uczniów.
+2. Wyszukaj ucznia o najwyższej średniej.
+3. Zlicz uczniów ze średnią powyżej 4.0.
+4. Posortuj uczniów malejąco według średniej.
+5. Wyszukaj ucznia po imieniu (wyszukiwanie binarne – po wcześniejszym sortowaniu alfabetycznym).
+
+---
+
+ZADANIE 5 – Ranking graczy
+
+Klasa:
+
+class Gracz
+{
+    public string Nick { get; set; }
+    public int Punkty { get; set; }
+
+    public Gracz(string nick, int punkty)
+    {
+        Nick = nick;
+        Punkty = punkty;
+    }
+}
+
+
+Wymagania
+1. Znajdź najlepszego gracza.
+2. Znajdź najgorszego gracza.
+3. Policz średnią liczbę punktów.
+4. Posortuj ranking malejąco.
+5. Wyszukaj gracza po nicku.
+6. Usuń gracza z rankingu.
+7. Skopiuj ranking do nowej tablicy.

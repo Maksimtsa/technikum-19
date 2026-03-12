@@ -69,5 +69,24 @@ class Program
             count++;
         }
         Console.WriteLine($"Średnia klasy: {sum / count}");
+
+        //zad 5
+        for (int i = 0; i < uczniowie.Length; i++)
+        {
+            for (int j = 0; j < uczniowie.Length - 1; j++)
+            {
+                if (uczniowie[j].Srednia > uczniowie[j + 1].Srednia)
+                {
+                    Uczen temp = uczniowie[j];
+                    uczniowie[j] = uczniowie[j + 1];
+                    uczniowie[j + 1] = temp;
+                }
+            }
+        }
+
+        for (int i = 0; i < uczniowie.Length; i++)
+        {
+            Console.WriteLine($"{uczniowie[i].Imie} - {uczniowie[i].Srednia}");
+        }
     }
 }

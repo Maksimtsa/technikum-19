@@ -8,3 +8,5 @@ FROM agenci;
 END //
 
 DELIMITER ;
+
+--call moja_proc()

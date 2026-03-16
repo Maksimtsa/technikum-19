@@ -1,0 +1,17 @@
+C:\Users\Uczen\Desktop\t10\t10\bin\Debug\net8.0-windows\t10.exe
+C:\Users\Uczen\Desktop\t10\t10\bin\Debug\net8.0-windows\t10.deps.json
+C:\Users\Uczen\Desktop\t10\t10\bin\Debug\net8.0-windows\t10.runtimeconfig.json
+C:\Users\Uczen\Desktop\t10\t10\bin\Debug\net8.0-windows\t10.dll
+C:\Users\Uczen\Desktop\t10\t10\bin\Debug\net8.0-windows\t10.pdb
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\t10.Matematyka.resources
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\t10.csproj.GenerateResource.cache
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\t10.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\t10.AssemblyInfoInputs.cache
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\t10.AssemblyInfo.cs
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\t10.csproj.CoreCompileInputs.cache
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\t10.dll
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\refint\t10.dll
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\t10.pdb
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\t10.genruntimeconfig.cache
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\ref\t10.dll
+C:\Users\Uczen\Desktop\t10\t10\obj\Debug\net8.0-windows\t10.PoleProstokata.resources

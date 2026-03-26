@@ -1,0 +1,56 @@
+* {
+    font-family: Garamond;
+}
+
+header {
+    background-color: saddlebrown;
+    color: white;
+    text-align: center;
+    height: 50px;
+}
+
+main {
+    display: flex;
+}
+
+.blockLeft {
+    background-color: tan;
+    height: 500px;
+    width: 40%;
+}
+
+.blockRight {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.topBlock,
+.bottomBlock {
+    background-color: tan;
+    height: 250px;
+}
+
+footer {
+    background-color: saddlebrown;
+    color: white;
+}
+
+form {
+    background-color: saddlebrown;
+    color: white;
+    padding: 10px 30px;
+    width: 300px;
+}
+
+input {
+    margin: 5px;
+}
+
+p::before {
+    content: STATUS;
+}
+
+h1 {
+    margin: 0;
+}

@@ -29,26 +29,52 @@
                     <label>
                         powtórz hasło:<input type="password" name="passwordR">
                     </label><br>
-                    <button type="submit">Zapisz</button>
+                    <button type="submit" name="send">Zapisz</button>
                 </form>
 
                 <?php
                     $server = 'localhost';
                     $user = 'root';
-                    $pas = '';
+                    $passwordDB = '';
                     $dbName = 'psy2';
-                    $mysql = mysqli_connect($server, $user, $pas, $dbName);
-                    $error = FALSE
+                    $mysql = mysqli_connect($server, $user, $passwordDB, $dbName);
+                    $error = FALSE;
 
-                    if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['passwordR'])){
-                        $login = $_POST['login'];
-                        $pass = $_POST['password'];
-                        $passR = $_POST['passwordR'];
+                    if(isset($_POST['send'])){
+                        if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['passwordR'])){
+                            $login = $_POST['login'];
+                            $pass = $_POST['password'];
+                            $passR = $_POST['passwordR'];
 
-                        if($login == '' || $pass == '' || $passR == ''){
-                            echo "Wypełnij wszystkie pola";
+                            if($login == '' || $pass == '' || $passR == ''){
+                                echo "Wypełnij wszystkie pola";
+                                $error = true;
+                            }
+
+                            elseif($pass != $passR){
+                                echo "<p>Hasła nie są takie same, konto nie zostało dodane</p>";
+                                $error = true;
+                            }
+                            else{
+                                $query = "SELECT uzytkownicy.login FROM uzytkownicy";
+                                $result = mysqli_query($mysql, $query);
+                                while($row = mysqli_fetch_row($result)){
+                                    if($login == $row[0]){
+                                        echo "<p>Login występuje w bazie danych, konto nie zostało dodane</p>";
+                                        $error = true;
+                                    }
+                                }
+                            }
+
+                            if($error == false){
+                                $passSzyfr = sha1($pass);
+                                $query = "INSERT INTO uzytkownicy VALUES (NULL, '$login', '$passSzyfr');";
+                                echo "<p>Konto zostało dodane</p>";
+                                mysqli_query($mysql, $query);
+                            }
                         }
                     }
+                    mysqli_close($mysql);
                 ?>
             </div>
             <div class="bottomBlock">

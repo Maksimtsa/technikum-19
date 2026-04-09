@@ -1,8 +1,6 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace fa
-{
     internal class Program
     {
         public class Student
@@ -48,13 +46,13 @@ namespace fa
             }
             HighestAVG(students);
 
-            InsertionSortByName(students);
-
             foreach (var student in students)
             {
                 Console.WriteLine(student);
             }
+            CountStudents(students);        
 
+            InsertionSortByAVG(students);
             BinarySearchName(students, "Ania");
         }
 
@@ -72,24 +70,27 @@ namespace fa
             Console.WriteLine($"Highest AVG: {maxAVG}");
         }
 
-        static void CountStudents(Student[] students){
+        static void CountStudents(Student[] students)
+        {
             int count = 0;
-            foreach(var student in students){
-                if(student.Average() > 4.0){
+            foreach (var student in students)
+            {
+                if (student.Average() > 4.0)
+                {
                     count++;
                 }
             }
-            Console.WriteLine(count);
+            Console.WriteLine("Students count: " + count);
         }
 
         static void InsertionSortByAVG(Student[] students)
         {
-            for(int i = 1; i < students.Length; i++)
+            for (int i = 1; i < students.Length; i++)
             {
                 int j = i;
                 if (students[j].Average() < students[j - 1].Average())
                 {
-                    (students[j], students[j-1]) = (students[j-1], students[j]);
+                    (students[j], students[j - 1]) = (students[j - 1], students[j]);
                     j--;
                 }
             }
@@ -100,17 +101,17 @@ namespace fa
             int left = 0;
             int right = students.Length - 1;
 
-            while(left <= right)
+            while (left <= right)
             {
                 int mid = (left + right) / 2;
                 int result = string.Compare(students[mid].Name, nameForSearch);
 
-                if(result == 0)
+                if (result == 0)
                 {
                     Console.WriteLine($"Index of {nameForSearch} - {mid}");
                     return;
                 }
-                else if(result > 0)
+                else if (result > 0)
                 {
                     right = mid - 1;
                 }
@@ -120,5 +121,5 @@ namespace fa
                 }
             }
         }
-    }
+    
 }

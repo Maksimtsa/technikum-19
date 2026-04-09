@@ -72,34 +72,14 @@ namespace fa
             Console.WriteLine($"Highest AVG: {maxAVG}");
         }
 
-        static void BubbleSortByAVG(Student[] students)
-        {
-            for (int i = 0; i < students.Length; i++)
-            {
-                for (int j = 0; j < students.Length - 1; j++)
-                {
-                    if (students[j].Average() > students[j + 1].Average())
-                    {
-                        (students[j], students[j + 1]) = (students[j + 1], students[j]);
-                    }
+        static void CountStudents(Student[] students){
+            int count = 0;
+            foreach(var student in students){
+                if(student.Average() > 4.0){
+                    count++;
                 }
             }
-        }
-
-        static void SelectionSortByAVG(Student[] students)
-        {
-            for(int i = 0; i < students.Length - 1; i++)
-            {
-                int index = i;
-                for(int j = i + 1; j < students.Length; j++)
-                {
-                    if (students[index].Average() > students[j].Average())
-                    {
-                        index = j;
-                    }
-                }
-                (students[i], students[index]) = (students[index], students[i]);
-            }
+            Console.WriteLine(count);
         }
 
         static void InsertionSortByAVG(Student[] students)
@@ -110,56 +90,6 @@ namespace fa
                 if (students[j].Average() < students[j - 1].Average())
                 {
                     (students[j], students[j-1]) = (students[j-1], students[j]);
-                    j--;
-                }
-            }
-        }
-
-        static void MergeSortByAVG(Student[] students)
-        {
-            if(students.Length <= 1) return;
-            int mid = students.Length / 2;
-
-            Student[] left = new Student[mid];
-            Student[] right = new Student[students.Length - mid];
-
-            Array.Copy(students, 0, left, 0, mid);
-            Array.Copy(students, mid, right, 0, students.Length - mid);
-
-            MergeSortByAVG(left);
-            MergeSortByAVG(right);
-
-            int i = 0, j = 0, k = 0;
-            while(i < left.Length && j < right.Length)
-            {
-                if (left[i].Average() < right[j].Average())
-                {
-                    students[k++] = right[j++];
-                }
-                else
-                {
-                    students[k++] = left[i++];
-                }
-            }
-
-            while(i < left.Length)
-            {
-                students[k++] = left[i++];
-            }
-            while(j < right.Length)
-            {
-                students[k++] = right[j++];
-            }
-        }
-
-        static void InsertionSortByName(Student[] student)
-        {
-            for(int i = 1; i  < student.Length; i++)
-            {
-                int j = i;
-                while (j > 0 && string.Compare(student[j].Name, student[j - 1].Name) < 0)
-                {
-                    (student[j], student[j - 1]) = (student[j - 1], student[j]);
                     j--;
                 }
             }

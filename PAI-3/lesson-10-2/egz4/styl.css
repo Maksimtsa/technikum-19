@@ -28,14 +28,16 @@ main {
     text-align: center;
 }
 
-.rigthBlock {
+.rightBlock {
     display: flex;
+    flex-direction: column;
+    width: 40%;
 }
 
 .rightBottom,
 .rightTop {
     height: 250px;
-    width: 40%;
+    width: 100%;
 }
 
 .rightTop {

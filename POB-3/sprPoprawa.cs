@@ -64,7 +64,7 @@ namespace sprPoprawa
             }
 
             //zad 3
-            ArrayManeger tab3 = new ArrayManeger(new int[] { });
+            ArrayManeger tab3 = new ArrayManeger(new int[10]);
             tab3.FillRandom(10);
             tab3.InsertionSort();
             tab3.Display();

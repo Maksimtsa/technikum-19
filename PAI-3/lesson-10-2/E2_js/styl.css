@@ -4,9 +4,9 @@ body {
     text-align: center;
 }
 
-#kontener {
+.kontener {
     width: 95%;
-    margin: auto;
+    margin: 0 auto;
 }
 
 header {
@@ -25,11 +25,12 @@ nav a {
     font-size: 150%;
     margin: 10px;
 }
-
+main{
+    display: flex;
+}
 main div {
     width: 33%;
     height: 350px;
-    float: left;
 }
 
 
@@ -38,11 +39,16 @@ footer {
     color: white;
     text-align: right;
     padding: 10px;
-    clear: both;
 }
 
 ul {
     text-align: left;
+}
+table{
+    margin: 0 auto;
+}
+td {
+    padding: 5px;
 }
 
 button {

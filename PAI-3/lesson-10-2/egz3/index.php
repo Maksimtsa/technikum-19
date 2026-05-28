@@ -54,15 +54,19 @@
             }
 		?>
 		<h2>Odpowiedzi na pytanie</h2>
-		<ol>
-			<?php
-				$query2 = mysqli_query($mysql, "SELECT odpowiedzi.odpowiedz, konta.nick FROM odpowiedzi, konta WHERE odpowiedzi.konta_id = konta.id AND odpowiedzi.Pytania_id = 1;");
-				while($row = mysqli_fetch_row($query2)) {
-					echo "<li>$row[0] $row[1]</li>";
-				}
-			?>
-		</ol>
+        <ol>
+            <?php
+                $query2 = mysqli_query($mysql,
+                "SELECT odpowiedzi.odpowiedz, konta.nick
+                FROM odpowiedzi, konta
+                WHERE odpowiedzi.konta_id = konta.id
+                AND odpowiedzi.Pytania_id = 1;");
 
+                while($row = mysqli_fetch_row($query2)) {
+                    echo "<li>$row[0] <em>$row[1]</em></li><hr>";
+                }
+            ?>
+        </ol>
     </section>
 
 </main>

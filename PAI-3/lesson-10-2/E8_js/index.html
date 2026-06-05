@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatuaże</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <main>
+        <section class="left">
+            <section class="headerLogo"><img src="logo.png" alt="salon"></section>
+            <section class="leftBlock">
+                <h3>Dodaj wzór</h3>
+                <form>
+                    <label for="fileName">Wzór</label><br>
+                    <input type="file" id="fileName"><br>
+                    <label for="colorList">Kolor:</label><br>
+                    <select id="colorList">
+                        <option value="Czarny">Czarny</option>
+                        <option value="Czerwony">Czerwony</option>
+                        <option value="Zielony">Zielony</option>
+                        <option value="Niebieski">Niebieski</option>
+                    </select><br>
+                    <label for="price">Cena</label><br>
+                    <input type="number" id="price"><br>
+                    <button type="button" onclick="AddPattern()">Dodaj wzór</button>
+                </form>
+            </section>
+            
+        </section>
+        <section class="right">
+            <section class="header"><h1>Studio Tatuażu</h1></section>
+            <section class="secBlock">
+                <h2>Galeria</h2>
+                <img src="smok.png" class="miniatury">
+                <img src="koliber.png" class="miniatury">
+            </section>
+            <script src="main.js"></script>
+        </section>
+    </main>
+    <footer>
+        <p>Autor strony: 000000000</p>
+    </footer>
+</body>
+</html>

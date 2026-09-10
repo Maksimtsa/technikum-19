@@ -1,0 +1,42 @@
+<Window x:Class="checkbox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:checkbox"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="a:"/>
+        <TextBox x:Name="txtA" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="b:"/>
+        <TextBox x:Name="txtB" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="5">
+            <CheckBox x:Name="checkboxDodawanie" Content="Dodawanie"/>
+            <CheckBox x:Name="checkboxOdejmowanie" Content="Odejmowanie"/>
+            <CheckBox x:Name="checkboxMnozenie" Content="Mnożenie"/>
+            <CheckBox x:Name="checkboxDzielenie" Content="Dzielenie"/>
+        </StackPanel>
+
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Content="Oblicz" Width="100" Height="30" Margin="5" Click="Oblicz_Click"/>
+
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Margin="5" Height="300">
+            <Label x:Name="result" Height="200"></Label>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -41,5 +41,21 @@ void main() {
 
     System.out.println("Najstarsza osoba: " + oldest + " - " + highestAge);
 
+    //13. Napisz program zliczający częstość występowania każdego słowa w podanym tekście za pomocą HashMap.
+    String tekst = "Ala ma kota Ala ma psa Kot ma mleko";
+    tekst = tekst.toLowerCase();
 
+    String[] words = tekst.split(" ");
+
+    HashMap<String, Integer> map1 = new HashMap<>();
+    for(String word : words){
+        if(map1.containsKey(word)){
+            map1.put(word, map1.get(word) + 1);
+        }
+        else{
+            map1.put(word, 1);
+        }
+    }
+
+    System.out.println(map1);
 }

@@ -78,10 +78,25 @@ void main() {
     System.out.println("Lista po usunięciu duplikatów: " + nums);
 
     //zad 7
-    HashMap<Integer, Integer> mapa = new HashMap<>();
-    for (int i = 0; i < nums.size(); i++) {
-        mapa.put(i, mapa.getOrDefault(i, 0) + 1);
+    List<Integer> list1 = new ArrayList<Integer>();
+    for(int i = 0; i < 5; i++){
+        int q = rand.nextInt(10);
+        list1.add(q);
     }
-    System.out.println("Ile występuje każda liczba: \n" + mapa);
+
+    System.out.println(list);
+
+    HashMap<Integer, Integer> map = new HashMap<>();
+    for(int i = 0; i < list1.size(); i++){
+        int number = list1.get(i);
+
+        if(map.containsKey(number)){
+            map.put(number, map.get(number) + 1);
+        }
+        else{
+            map.put(number, 1);
+        }
+    }
+    System.out.println(map);
 
 }

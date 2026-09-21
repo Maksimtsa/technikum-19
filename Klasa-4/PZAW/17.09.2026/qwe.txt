@@ -1,0 +1,49 @@
+import './App.css';
+
+
+const bryly = [
+  {
+    id: 0,
+    nazwa: "sześcian",
+    obraz: "/obrazy/szescian.png",
+    wzoryPole: "P = 6 · a²",
+    wzoryObjetosc: "V = a³",
+    wymiary: "a = 2",
+    pole: PoleSzescianu(2),
+    objetosc: ObjetoscSzescianu(2)
+  },
+  {
+    id: 1,
+    nazwa: "prostopadłościan",
+    obraz: "/obrazy/prostopadloscian.png",
+    wzoryPole: "P = 2ab + 2ah + 2bh",
+    wzoryObjetosc: "V = a · b · h",
+    wymiary: "a = 3, b = 4, h = 5",
+    pole: 2 * 3 * 4 + 2 * 3 * 5 + 2 * 4 * 5,
+    objetosc: Objetosc(3, 4, 5)
+  },
+  {
+    id: 2,
+    nazwa: "kula",
+    obraz: "/obrazy/kula.png",
+    wzoryPole: "P = 4 · π · r²",
+    wzoryObjetosc: "V = 4/3 · π · r³",
+    wymiary: "r = 4",
+    pole: PoleKuli(4).toFixed(2),
+    objetosc: ObjetoscKuli(4).toFixed(2)
+  }
+];
+
+function App() {
+  return (
+    <div className="App">
+
+      <h1>Bryły</h1>
+
+      
+
+    </div>
+  );
+}
+
+export default App;

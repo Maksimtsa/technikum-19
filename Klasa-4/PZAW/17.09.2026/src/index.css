@@ -1,13 +1,52 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(121, 198, 226);
+  font-style: italic;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header{
+  text-align: center;
+}
+
+.tableBlock{  
+  text-align: center;
+}
+
+table{
+  width: 90%;
+  background-color: rgb(62, 151, 211);
+  border-collapse: collapse;
+}
+
+td, th{
+  border: 1.6px solid rgb(20, 9, 169);
+}
+
+li, ol{
+  color: yellow;
+}
+
+ol{
+  padding-left: 1;
+  text-align: left;
+}
+
+.poleNazwa{
+  color: rgb(0, 246, 152);
+}
+
+.figury{
+  color: purple;
+  width: 15%;
+}
+
+.poleObjet{
+  color: rgb(165, 24, 125);
+  font-size: 18px;
+  font-style: bold;
+}
+
+.Pole, .Objetosc{
+  color: rgb(185, 13, 13);
 }

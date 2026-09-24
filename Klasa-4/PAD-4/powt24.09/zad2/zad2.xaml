@@ -1,0 +1,50 @@
+<Window x:Class="powtZad2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:powtZad2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Liczba dni:" VerticalAlignment="Center" Margin="5"/>
+
+        <TextBox x:Name="liczbaDni" Grid.Row="0" Grid.Column="1" Width="140" HorizontalAlignment="Left" Margin="5"/>
+
+        <GroupBox Grid.Row="1" Grid.Column="0" Header="Rodzaj biletu" Margin="5">
+
+            <StackPanel>
+                <RadioButton x:Name="radioNormalny" Content="normalny" IsChecked="True" Margin="5"/>
+
+                <RadioButton x:Name="radioUlgowy" Content="ulgowy" Margin="5"/>
+            </StackPanel>
+        </GroupBox>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5">
+
+            <TextBlock Text="Wybór strefy" Margin="5"/>
+
+            <ComboBox x:Name="cmbStrefa" SelectedIndex="0">
+                <ComboBoxItem Content="A"/>
+                <ComboBoxItem Content="A+B"/>
+                <ComboBoxItem Content="A+B+C"/>
+            </ComboBox>
+        </StackPanel>
+
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Oblicz" Height="30" Click="BtnOblicz_Click" Margin="5"/>
+
+        <TextBlock x:Name="txtWynik" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Wynik" FontWeight="Bold" TextWrapping="Wrap"/>
+    </Grid>
+</Window>

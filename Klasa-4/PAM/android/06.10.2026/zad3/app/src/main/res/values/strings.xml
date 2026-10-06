@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">zad3</string>
+    <string name="wiek">Wiek</string>
+    <string name="login">Login</string>
+    <string name="podaj_login_5_znak_w">Podaj login (5 znaków)</string>
+    <string name="podaj_login_5_znak">Podaj login (5 znaków)</string>
+    <string name="zapisz">Zapisz</string>
+    <string name="podaj_wiek_liczba">Podaj wiek (liczba)</string>
+</resources>

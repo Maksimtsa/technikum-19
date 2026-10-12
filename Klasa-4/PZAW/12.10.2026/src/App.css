@@ -1,0 +1,29 @@
+body{
+  background-color: gray;
+}
+
+.header-block{
+  justify-content: center;
+  text-align: center;
+}
+
+main{
+  display: flex;
+}
+
+.left-block{
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.header-block img {
+  width: 15%;
+}
+
+.left-block img{
+  width: 50%;
+}
+
+h3{
+  color: rgb(226, 172, 7);
+}

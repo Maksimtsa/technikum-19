@@ -1,5 +1,3 @@
-namespace zad;
-
 public class Pokoj
 {
     private int numerPokoju;
@@ -25,7 +23,7 @@ public class Pokoj
         return "To jest ogólny opis pokoju.";
     }
 
-    
+
 }
 class PokojStandardowy : Pokoj
 {
@@ -39,9 +37,9 @@ class PokojStandardowy : Pokoj
     public override string Opis()
     {
         if (czyZwidokiem)
-            return $"Pokój standardowy numer: {GetNumerPokoju} ma {GetLiczbaMiejsc} miejsc. Z widokiem";
+            return $"Pokój standardowy numer: {GetNumerPokoju()} ma {GetLiczbaMiejsc()} miejsc. Z widokiem";
 
-        return $"Pokój standardowy numer: {GetNumerPokoju} ma {GetLiczbaMiejsc} miejsc. Bez widoku";
+        return $"Pokój standardowy numer: {GetNumerPokoju()} ma {GetLiczbaMiejsc()} miejsc. Bez widoku";
     }
 }
 
@@ -58,21 +56,71 @@ class Apartament : Pokoj
 
     public override string Opis()
     {
-        return $"Apartament numer: {numerApartamentu} na piętrze {floor}, ma {GetLiczbaMiejsc} miejsc.";
+        return $"Apartament numer: {numerApartamentu} na piętrze {floor}, ma {GetLiczbaMiejsc()} miejsc.";
+    }
+}
+
+class PokojRodzinny : Pokoj
+{
+    private int liczbaDzieci;
+    private bool czyLozeczko;
+
+    public PokojRodzinny(int numerPokoju, int liczbaMiejsc, int liczbaDzieci, bool czyLozeczko)
+            : base(numerPokoju, liczbaMiejsc)
+    {
+        this.liczbaDzieci = liczbaDzieci;
+        this.czyLozeczko = czyLozeczko;
+    }
+
+    public int GetLiczbaDzieci()
+    {
+        return liczbaDzieci;
+    }
+    public void SetLiczbaDzieci(int liczbaDzieci)
+    {
+        this.liczbaDzieci = liczbaDzieci;
+    }
+    public bool GetCzyLozeczko()
+    {
+        return czyLozeczko;
+    }
+    public void SetCzyLozeczko(bool czyLozeczko)
+    {
+        this.czyLozeczko = czyLozeczko;
+    }
+
+    public override string Opis()
+    {
+        string lozeczko;
+
+        if (czyLozeczko)
+        {
+            lozeczko = "tak";
+        }
+        else
+        {
+            lozeczko = "nie";
+        }
+
+        return $"Pokój rodzinny numer: {GetNumerPokoju()}, dla {GetLiczbaMiejsc()} osób. Możliwe noclegi dla {liczbaDzieci} dzieci. Łóżeczko: {lozeczko}.";
     }
 }
 
 
-internal class Program
+    internal class Program
 {
     static void Main(string[] args)
     {
         List<Pokoj> lista = new List<Pokoj>()
+            {
+                new PokojStandardowy(3, 1, true),
+                new Apartament(4, 2, 7, 3),
+                new PokojRodzinny(5, 4, 2, true)
+            };
+
+        foreach (Pokoj pokoj in lista)
         {
-            new PokojStandardowy(3, 1, true),
-            new Apartament(3, 1, 7, 3)
-        };
-
-
+            Console.WriteLine(pokoj.Opis());
+        }
     }
 }

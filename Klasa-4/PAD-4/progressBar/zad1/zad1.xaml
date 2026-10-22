@@ -1,0 +1,66 @@
+<Window x:Class="zad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zad"
+        mc:Ignorable="d"
+        Title="Dane osobowe" Height="auto" Width="auto">
+    <Grid Margin="10px">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0">
+            <Label Content="Imię:"></Label>
+            <TextBox x:Name="name" Width="200px" HorizontalAlignment="Left" TextChanged="ZmianaTekstu"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <Label Content="Nazwisko:"/>
+            <TextBox x:Name="surname" Width="200px" HorizontalAlignment="Left" TextChanged="ZmianaTekstu"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Label Content="Data urodzenia:"/>
+            <DatePicker HorizontalAlignment="Left" x:Name="dateOfBirth" Width="200px" SelectedDateChanged="ZmianaWyboru"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="0">
+            <Label Content="Płeć"/>
+            <ComboBox x:Name="comboBoxPlec" SelectionChanged="ZmianaWyboru" Width="200px" HorizontalAlignment="Left">
+                <ComboBoxItem Content="Kobieta"></ComboBoxItem>
+                <ComboBoxItem Content="Mężczyzna"></ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <GroupBox Header="Adres zamieszkania" Grid.Row="4" Grid.Column="0">
+            <StackPanel>
+                <Label Content="Ulica:"/>
+                <TextBox x:Name="street" Width="auto" TextChanged="ZmianaTekstu"/>
+                <Label Content="Nr domu/mieszklania:"/>
+                <TextBox x:Name="numberHouse" Width="auto" TextChanged="ZmianaTekstu"/>
+                <Label Content="Kod pocztowy:"/>
+                <TextBox x:Name="code" Width="auto" TextChanged="ZmianaTekstu"/>
+                <Label Content="Miejscowość:"/>
+                <TextBox x:Name="city" Width="auto" TextChanged="ZmianaTekstu"/>
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="5">
+            <Label Content="Postęp: 0%" x:Name="postep"/>
+            <ProgressBar x:Name="progressBar" Height="20" Minimum="0" Maximum="100" Value="0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,5,0,5">
+            <Button Content="Wyczyść" Width="90"  Margin="5" Click="Button_Click"/>
+            <Button Content="Podsumowanie" Width="120" Margin="5" Click="Podsumowanie_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="7">
+            <TextBlock x:Name="textblock" TextWrapping="Wrap"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

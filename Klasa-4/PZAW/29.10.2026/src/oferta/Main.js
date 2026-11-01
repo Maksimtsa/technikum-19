@@ -35,8 +35,15 @@ function Main(){
     }
 
     const sprzedanieParyButow = (id) => {
-        const zaktualizowane = buty.map(but => {});
-    }
+        const zaktualizowane = buty.map(but => {
+            if (but.id === id && but.stanMagazynowy > 0) {
+                but.stanMagazynowy = but.stanMagazynowy - 1;
+            }
+            return but;
+        });
+    
+        setButy(zaktualizowane);
+    };
 
     const przyjecieParyButow = (id, ilosc) => {
         const zaktualizowane = buty.map(but => {

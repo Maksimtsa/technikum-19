@@ -1,8 +1,74 @@
 body{
-  background-color: rgb(30, 134, 169);
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: rgb(89, 161, 185);
+  font-family: 'Poppins', sans-serif;
 }
 
 header{
   text-align: center;
+}
+
+main{
+  text-align: center;
+}
+
+.ofertaBLock img{
+  width: 40%;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.ofertaBLock{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 600px;
+  margin: 15px auto;
+  text-align: left;
+}
+
+.ofertaDane{
+  display: flex;
+  flex-direction: column;
+}
+
+.ofertaDane button{
+  margin: 0 5px 0 0;
+}
+
+.buttonsBlock button{
+  background-color: #ffffff;
+  color: #3b7a9e;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 2px 4px 0px #5a5a5a;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.buttonsBlock button:hover {
+  background-color: #d7d7d8;
+}
+
+.ofertaBLock button{
+  background-color: #ffffff;
+  color: #3b7a9e;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 2px 4px 0px #5a5a5a;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.ofertaBLock button:hover{
+  background-color: #d7d7d8;
+}
+
+footer{
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }

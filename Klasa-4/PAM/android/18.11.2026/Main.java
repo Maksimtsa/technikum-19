@@ -40,7 +40,13 @@ public class MainActivity extends AppCompatActivity {
                 iv.setImageResource(R.drawable.brazil1);
                 iv.setScaleType(ImageView.ScaleType.CENTER);
 
-                
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        1.0f
+                );
+
+                iv.setLayoutParams(params);
 
                 LinearLayout ll = findViewById(R.id.main);
                 ll.addView(iv, ll.indexOfChild(btn1));

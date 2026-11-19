@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.info-block {
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.info-block ul {
+  list-style-position: outside;
+  padding-left: 20px;
+}
+
+header hr{
+  width: 44%;
+}
+
+.calculation-block{
+  display: flex;
+}
+
+.formularz {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
